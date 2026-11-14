@@ -1129,6 +1129,13 @@ describe("stats roundtrip", () => {
     saveStats(stats);
     expect(loadStats()).toEqual(stats);
   });
+
+  it("verwirft Statistik mit falscher Form", () => {
+    const ls = fakeLocalStorage();
+    vi.stubGlobal("localStorage", ls);
+    ls.setItem("dcq:stats", JSON.stringify({ played: 1 }));
+    expect(loadStats()).toEqual(emptyStats());
+  });
 });
 
 describe("ohne funktionierenden Storage", () => {
@@ -1213,7 +1220,13 @@ export function saveGameState(state: GameState): void {
 }
 
 export function loadStats(): Stats {
-  return readJson<Stats>(STATS_KEY) ?? emptyStats();
+  const s = readJson<Stats>(STATS_KEY);
+  return s !== null &&
+    typeof s.played === "number" &&
+    Array.isArray(s.solvedByHint) &&
+    s.solvedByHint.length === 6
+    ? s
+    : emptyStats();
 }
 
 export function saveStats(stats: Stats): void {
