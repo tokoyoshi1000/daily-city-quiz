@@ -49,7 +49,13 @@ export function saveGameState(state: GameState): void {
 }
 
 export function loadStats(): Stats {
-  return readJson<Stats>(STATS_KEY) ?? emptyStats();
+  const s = readJson<Stats>(STATS_KEY);
+  return s !== null &&
+    typeof s.played === "number" &&
+    Array.isArray(s.solvedByHint) &&
+    s.solvedByHint.length === 6
+    ? s
+    : emptyStats();
 }
 
 export function saveStats(stats: Stats): void {

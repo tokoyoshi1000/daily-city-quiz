@@ -53,6 +53,13 @@ describe("stats roundtrip", () => {
     saveStats(stats);
     expect(loadStats()).toEqual(stats);
   });
+
+  it("verwirft Statistik mit falscher Form", () => {
+    const ls = fakeLocalStorage();
+    vi.stubGlobal("localStorage", ls);
+    ls.setItem("dcq:stats", JSON.stringify({ played: 1 }));
+    expect(loadStats()).toEqual(emptyStats());
+  });
 });
 
 describe("ohne funktionierenden Storage", () => {
