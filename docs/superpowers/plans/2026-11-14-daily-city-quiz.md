@@ -1111,10 +1111,12 @@ describe("game state roundtrip", () => {
     expect(loadGameState()).toBeNull();
   });
 
-  it("verwirft gespeicherte Zustände mit falscher Form", () => {
+  it("verwirft gespeicherte Zustände mit falscher Form oder unplausiblen Werten", () => {
     const ls = fakeLocalStorage();
     vi.stubGlobal("localStorage", ls);
     ls.setItem("dcq:state", JSON.stringify({ foo: 1 }));
+    expect(loadGameState()).toBeNull();
+    ls.setItem("dcq:state", JSON.stringify({ ...createInitialState("2026-11-14"), quizIndex: 3 }));
     expect(loadGameState()).toBeNull();
   });
 });
@@ -1191,11 +1193,12 @@ function isPlausibleGameState(s: unknown): s is GameState {
   const g = s as Record<string, unknown>;
   return (
     typeof g.puzzleDate === "string" &&
-    typeof g.hintsRevealed === "number" &&
-    typeof g.quizIndex === "number" &&
-    Array.isArray(g.guesses) &&
-    Array.isArray(g.quizAnswers) &&
-    (g.solvedAtHint === null || typeof g.solvedAtHint === "number") &&
+    typeof g.hintsRevealed === "number" && g.hintsRevealed >= 0 && g.hintsRevealed <= 6 &&
+    typeof g.quizIndex === "number" && g.quizIndex >= 0 && g.quizIndex <= 2 &&
+    Array.isArray(g.guesses) && g.guesses.length <= 6 &&
+    Array.isArray(g.quizAnswers) && g.quizAnswers.length <= 3 &&
+    (g.solvedAtHint === null ||
+      (typeof g.solvedAtHint === "number" && g.solvedAtHint >= 1 && g.solvedAtHint <= 6)) &&
     PHASES.includes(g.phase as (typeof PHASES)[number])
   );
 }
