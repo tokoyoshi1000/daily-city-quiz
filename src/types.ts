@@ -35,6 +35,7 @@ export interface Puzzle {
 
 export interface GuessRecord {
   cityName: string;
+  country: string;
   distanceKm: number; // gerundet, 0 bei Treffer
   direction: string; // z. B. "südwestlich", "" bei Treffer
   correct: boolean;

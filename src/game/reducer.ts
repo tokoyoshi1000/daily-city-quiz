@@ -30,12 +30,13 @@ export function createGameReducer(puzzle: Puzzle) {
       }
       case "GUESS": {
         if (state.phase !== "guessing") return state;
+        if (state.guesses.some((g) => g.cityName === action.city.name && g.country === action.city.country)) return state; // doppelter Tipp kostet keinen Hinweis
         if (isSameCity(action.city, puzzle.city)) {
-          const guesses = [...state.guesses, { cityName: action.city.name, distanceKm: 0, direction: "", correct: true }];
+          const guesses = [...state.guesses, { cityName: action.city.name, country: action.city.country, distanceKm: 0, direction: "", correct: true }];
           return { ...state, guesses, solvedAtHint: state.hintsRevealed, phase: "reveal" };
         }
         const miss = describeMiss(action.city, puzzle.city);
-        const guesses = [...state.guesses, { cityName: action.city.name, ...miss, correct: false }];
+        const guesses = [...state.guesses, { cityName: action.city.name, country: action.city.country, ...miss, correct: false }];
         if (state.hintsRevealed >= 6) return { ...state, guesses, phase: "reveal" };
         return { ...state, guesses, hintsRevealed: state.hintsRevealed + 1 };
       }
@@ -45,6 +46,7 @@ export function createGameReducer(puzzle: Puzzle) {
       }
       case "ANSWER": {
         if (state.phase !== "quiz") return state;
+        if (state.quizIndex >= puzzle.quiz.length) return state; // defekter/manipulierter Zustand
         if (state.quizAnswers.length > state.quizIndex) return state; // Frage schon beantwortet
         const correct = action.choiceIndex === puzzle.quiz[state.quizIndex].answerIndex;
         return { ...state, quizAnswers: [...state.quizAnswers, correct] };
@@ -52,9 +54,11 @@ export function createGameReducer(puzzle: Puzzle) {
       case "NEXT": {
         if (state.phase !== "quiz") return state;
         if (state.quizAnswers.length <= state.quizIndex) return state; // noch keine Antwort
-        if (state.quizAnswers.length === 3) return { ...state, phase: "result" };
+        if (state.quizAnswers.length >= puzzle.quiz.length) return { ...state, phase: "result" };
         return { ...state, quizIndex: state.quizIndex + 1 };
       }
+      default:
+        return state;
     }
   };
 }
