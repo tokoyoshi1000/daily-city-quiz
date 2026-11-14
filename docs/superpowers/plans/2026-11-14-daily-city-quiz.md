@@ -228,6 +228,7 @@ export interface Puzzle {
 
 export interface GuessRecord {
   cityName: string;
+  country: string;
   distanceKm: number; // gerundet, 0 bei Treffer
   direction: string; // z. B. "südwestlich", "" bei Treffer
   correct: boolean;
@@ -1014,12 +1015,13 @@ export function createGameReducer(puzzle: Puzzle) {
       }
       case "GUESS": {
         if (state.phase !== "guessing") return state;
+        if (state.guesses.some((g) => g.cityName === action.city.name && g.country === action.city.country)) return state; // doppelter Tipp kostet keinen Hinweis
         if (isSameCity(action.city, puzzle.city)) {
-          const guesses = [...state.guesses, { cityName: action.city.name, distanceKm: 0, direction: "", correct: true }];
+          const guesses = [...state.guesses, { cityName: action.city.name, country: action.city.country, distanceKm: 0, direction: "", correct: true }];
           return { ...state, guesses, solvedAtHint: state.hintsRevealed, phase: "reveal" };
         }
         const miss = describeMiss(action.city, puzzle.city);
-        const guesses = [...state.guesses, { cityName: action.city.name, ...miss, correct: false }];
+        const guesses = [...state.guesses, { cityName: action.city.name, country: action.city.country, ...miss, correct: false }];
         if (state.hintsRevealed >= 6) return { ...state, guesses, phase: "reveal" };
         return { ...state, guesses, hintsRevealed: state.hintsRevealed + 1 };
       }
@@ -1029,6 +1031,7 @@ export function createGameReducer(puzzle: Puzzle) {
       }
       case "ANSWER": {
         if (state.phase !== "quiz") return state;
+        if (state.quizIndex >= puzzle.quiz.length) return state; // defekter/manipulierter Zustand
         if (state.quizAnswers.length > state.quizIndex) return state; // Frage schon beantwortet
         const correct = action.choiceIndex === puzzle.quiz[state.quizIndex].answerIndex;
         return { ...state, quizAnswers: [...state.quizAnswers, correct] };
@@ -1036,9 +1039,11 @@ export function createGameReducer(puzzle: Puzzle) {
       case "NEXT": {
         if (state.phase !== "quiz") return state;
         if (state.quizAnswers.length <= state.quizIndex) return state; // noch keine Antwort
-        if (state.quizAnswers.length === 3) return { ...state, phase: "result" };
+        if (state.quizAnswers.length >= puzzle.quiz.length) return { ...state, phase: "result" };
         return { ...state, quizIndex: state.quizIndex + 1 };
       }
+      default:
+        return state;
     }
   };
 }
@@ -1055,6 +1060,8 @@ Expected: PASS.
 git add src/game/reducer.ts src/game/reducer.test.ts
 git commit -m "feat: add game state machine for both acts"
 ```
+
+**Härtung (aus Code-Review, als Folge-Commit):** `GuessRecord` trägt zusätzlich `country`; der Reducer ignoriert doppelte Tipps derselben Stadt (Name+Land), prüft `quizIndex`/`quizAnswers` gegen `puzzle.quiz.length` statt hartkodierter 3, und hat einen `default`-Zweig. `reducer.test.ts` deckt zusätzlich ab: doppelter Tipp, START im laufenden Spiel, NEXT ohne Antwort, Treffer bei Hinweis 6 (sechs verschiedene Städte für den Verlust-Test), ANSWER bei defektem `quizIndex`.
 
 ---
 
@@ -1101,6 +1108,13 @@ describe("game state roundtrip", () => {
     vi.stubGlobal("localStorage", ls);
     expect(loadGameState()).toBeNull();
     ls.setItem("dcq:state", "{kaputt");
+    expect(loadGameState()).toBeNull();
+  });
+
+  it("verwirft gespeicherte Zustände mit falscher Form", () => {
+    const ls = fakeLocalStorage();
+    vi.stubGlobal("localStorage", ls);
+    ls.setItem("dcq:state", JSON.stringify({ foo: 1 }));
     expect(loadGameState()).toBeNull();
   });
 });
@@ -1169,8 +1183,26 @@ function writeJson(key: string, value: unknown): void {
   }
 }
 
+const PHASES = ["start", "guessing", "reveal", "quiz", "result"] as const;
+
+/** Grobe Formprüfung, damit manipulierte/veraltete Spielstände das Spiel nicht crashen. */
+function isPlausibleGameState(s: unknown): s is GameState {
+  if (typeof s !== "object" || s === null) return false;
+  const g = s as Record<string, unknown>;
+  return (
+    typeof g.puzzleDate === "string" &&
+    typeof g.hintsRevealed === "number" &&
+    typeof g.quizIndex === "number" &&
+    Array.isArray(g.guesses) &&
+    Array.isArray(g.quizAnswers) &&
+    (g.solvedAtHint === null || typeof g.solvedAtHint === "number") &&
+    PHASES.includes(g.phase as (typeof PHASES)[number])
+  );
+}
+
 export function loadGameState(): GameState | null {
-  return readJson<GameState>(STATE_KEY);
+  const parsed = readJson<GameState>(STATE_KEY);
+  return parsed !== null && isPlausibleGameState(parsed) ? parsed : null;
 }
 
 export function saveGameState(state: GameState): void {
