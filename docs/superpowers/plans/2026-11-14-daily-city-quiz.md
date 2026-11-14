@@ -906,7 +906,7 @@ describe("Akt 1", () => {
     expect(s.guesses[0].correct).toBe(false);
     expect(s.guesses[0].cityName).toBe("Warschau");
     expect(s.guesses[0].distanceKm).toBeGreaterThan(0);
-    expect(s.guesses[0].direction).toBe("südwestlich");
+    expect(s.guesses[0].direction).toBe("westlich");
   });
 
   it("richtiger Versuch löst und merkt sich die Hinweis-Nummer", () => {
