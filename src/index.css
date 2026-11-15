@@ -17,15 +17,6 @@
   --font-sans: "B612", system-ui, sans-serif;
   --font-mono: "B612 Mono", ui-monospace, monospace;
 
-  /* Alt-Tokens — werden in Task 13 entfernt */
-  --color-night: #0b1026;
-  --color-night-soft: #141b3c;
-  --color-card: #1d2550;
-  --color-accent: #ffb703;
-  --color-accent-soft: #ffd166;
-  --color-correct: #2ec4b6;
-  --color-wrong: #ef476f;
-  --color-ink-dim: #9aa3c7;
 }
 
 body {
@@ -72,12 +63,6 @@ body {
 }
 .animate-row-in { animation: row-in 0.3s ease-out; }
 
-/* Alt — wird in Task 13 entfernt */
-@keyframes card-in {
-  from { opacity: 0; transform: translateY(8px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-.animate-card-in { animation: card-in 0.35s ease-out; }
 
 /* Aktuelle Metro-Station */
 @keyframes station-pulse {
@@ -124,7 +109,6 @@ body {
 @media (prefers-reduced-motion: reduce) {
   .flap-intro,
   .animate-row-in,
-  .animate-card-in,
   .station-now,
   .animate-timer-pulse,
   .stamp-in {
