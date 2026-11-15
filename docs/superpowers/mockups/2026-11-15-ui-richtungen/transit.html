@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mockup – Transit</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400..600&family=B612:ital@0;1&family=B612+Mono&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #131519;
+    --board: #0f1113;
+    --cell: #1a1d21;
+    --edge: #24282e;
+    --amber: #ffc83d;
+    --white: #e8e9eb;
+    --grey: #9aa0a8;
+    --red: #ff7a6b;
+    --paper: #f7f3e8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { min-height: 100%; }
+  body { background: var(--bg); color: var(--white); font-family: "B612", sans-serif; }
+  .wrap { max-width: 430px; margin: 0 auto; padding: 18px 16px 48px; }
+  .screen { display: none; }
+  .screen.on { display: block; }
+  .mono { font-family: "B612 Mono", monospace; }
+
+  .bhead { background: var(--board); border: 1px solid var(--edge); border-radius: 10px; padding: 14px 14px 16px; }
+  .brow1 { display: flex; justify-content: space-between; font-family: "B612 Mono", monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--amber); }
+  .dest { margin-top: 14px; display: flex; align-items: center; gap: 12px; }
+  .dest .lbl { font-family: "B612 Mono", monospace; font-size: 11px; letter-spacing: 0.12em; color: var(--grey); }
+  .flaps { display: flex; gap: 5px; }
+  .flap {
+    position: relative; display: grid; place-items: center;
+    width: 34px; height: 46px; background: var(--cell); border-radius: 4px;
+    font-family: Oswald, sans-serif; font-weight: 500; font-size: 28px; color: var(--amber);
+    transform-origin: center 55%;
+  }
+  .flap::after { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1.5px; background: rgba(0, 0, 0, 0.55); }
+  .f1 { animation: flip 0.7s ease 0.4s 2; }
+  .f2 { animation: flip 0.7s ease 0.55s 2; }
+  .f3 { animation: flip 0.7s ease 0.7s 2; }
+  @keyframes flip { 0% { transform: rotateX(0); } 50% { transform: rotateX(-86deg); } 100% { transform: rotateX(0); } }
+  @media (prefers-reduced-motion: reduce) { .f1, .f2, .f3 { animation: none; } }
+  .brow3 { display: flex; justify-content: space-between; margin-top: 14px; font-family: "B612 Mono", monospace; font-size: 12px; color: #c9cdd3; }
+
+  .ann { margin-top: 14px; background: var(--cell); border: 1px solid var(--edge); border-radius: 10px; padding: 14px; }
+  .tag { display: inline-block; font-family: "B612 Mono", monospace; font-size: 10.5px; letter-spacing: 0.1em; color: var(--board); background: var(--amber); padding: 2px 6px; border-radius: 3px; }
+  .ann p { margin-top: 9px; font-size: 15px; line-height: 1.55; }
+  .ann .sig { margin-top: 8px; font-family: "B612 Mono", monospace; font-size: 11px; color: var(--grey); }
+
+  .cta { display: block; width: 100%; margin-top: 18px; background: var(--amber); color: #15171a; border: 0; border-radius: 8px; font-family: Oswald, sans-serif; font-weight: 500; font-size: 19px; letter-spacing: 0.06em; padding: 13px; cursor: pointer; text-transform: uppercase; }
+  .cta:hover { filter: brightness(1.05); }
+  button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid var(--amber); outline-offset: 2px; }
+  .howto { margin-top: 14px; font-family: "B612 Mono", monospace; font-size: 11.5px; line-height: 1.7; color: var(--grey); text-align: center; }
+
+  .metro { margin: 22px 6px 6px; position: relative; }
+  .metro .line { position: absolute; left: 7px; right: 7px; top: 7px; height: 2px; background: #3a3f46; }
+  .metro .amberline { position: absolute; left: 7px; width: 37%; top: 7px; height: 2px; background: var(--amber); }
+  .stations { position: relative; display: flex; justify-content: space-between; }
+  .st { width: 16px; height: 16px; border-radius: 50%; background: var(--bg); border: 2.5px solid #4a505a; }
+  .st.done { background: var(--amber); border-color: var(--amber); }
+  .st.now { border-color: var(--amber); box-shadow: 0 0 0 4px rgba(255, 200, 61, 0.18); }
+  .stlbl { display: flex; justify-content: space-between; margin-top: 6px; font-family: "B612 Mono", monospace; font-size: 10px; color: var(--grey); }
+  .stlbl span { width: 16px; text-align: center; }
+  .metrocap { margin-top: 10px; text-align: center; font-family: "B612 Mono", monospace; font-size: 11px; letter-spacing: 0.1em; color: var(--grey); }
+
+  .hrow { display: flex; gap: 11px; background: var(--cell); border: 1px solid var(--edge); border-radius: 8px; padding: 12px; margin-top: 8px; }
+  .hno { align-self: flex-start; font-family: "B612 Mono", monospace; font-size: 12px; color: var(--amber); background: var(--board); border-radius: 4px; padding: 4px 7px; }
+  .hrow p { font-size: 14.5px; line-height: 1.55; }
+
+  .mtable { margin-top: 18px; }
+  .mthead { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; font-family: "B612 Mono", monospace; font-size: 10px; letter-spacing: 0.1em; color: var(--grey); padding: 0 2px 6px; }
+  .mrow { display: grid; grid-template-columns: 1fr auto auto; gap: 10px; align-items: center; border-top: 1px solid var(--edge); padding: 9px 2px; }
+  .mrow .city { font-family: Oswald, sans-serif; font-weight: 500; font-size: 17px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .mrow .dist { font-family: "B612 Mono", monospace; font-size: 12px; color: var(--amber); }
+  .chip { font-family: "B612 Mono", monospace; font-size: 10px; color: var(--red); border: 1px solid var(--red); border-radius: 3px; padding: 2px 5px; }
+
+  .quip { margin-top: 16px; font-size: 13.5px; font-style: italic; color: #c9cdd3; }
+
+  .ticket { margin-top: 16px; position: relative; background: var(--paper); color: #15171a; border-radius: 10px; padding: 16px 20px; }
+  .ticket::before, .ticket::after { content: ""; position: absolute; top: 50%; width: 15px; height: 15px; background: var(--bg); border-radius: 50%; transform: translateY(-50%); }
+  .ticket::before { left: -8px; }
+  .ticket::after { right: -8px; }
+  .ticket .lbl { font-family: "B612 Mono", monospace; font-size: 10.5px; letter-spacing: 0.12em; color: #6b6453; }
+  .ticket input { width: 100%; background: transparent; border: 0; border-bottom: 1.5px solid #15171a; font-family: "B612", sans-serif; font-size: 16px; color: #15171a; padding: 7px 2px; margin-top: 4px; }
+  .ticket input::placeholder { color: #a39a85; }
+  .ticket button { display: block; width: 100%; margin-top: 14px; background: #15171a; color: var(--amber); border: 0; border-radius: 6px; font-family: Oswald, sans-serif; font-weight: 500; font-size: 16px; letter-spacing: 0.08em; text-transform: uppercase; padding: 12px; cursor: pointer; }
+
+  .switch { position: fixed; top: 10px; right: 10px; z-index: 5; display: flex; gap: 6px; }
+  .switch a, .switch button { font: 500 12px "B612 Mono", monospace; background: rgba(15, 17, 19, 0.9); border: 1px solid var(--edge); color: #c9cdd3; padding: 6px 10px; border-radius: 999px; text-decoration: none; cursor: pointer; }
+  .switch .on { background: var(--amber); border-color: var(--amber); color: #15171a; font-weight: 700; }
+</style>
+</head>
+<body>
+<nav class="switch">
+  <a href="./index.html">Übersicht</a>
+  <button class="on" data-s="start">Start</button>
+  <button data-s="game">Spiel</button>
+</nav>
+
+<div class="wrap">
+  <section id="start" class="screen on">
+    <div class="bhead">
+      <div class="brow1"><span>DAILY CITY QUIZ</span><span>SA 15 NOV</span></div>
+      <div class="dest">
+        <span class="lbl">ZIEL</span>
+        <span class="flaps">
+          <span class="flap f1">?</span><span class="flap f2">?</span><span class="flap f3">?</span>
+        </span>
+      </div>
+      <div class="brow3"><span>RÄTSEL 001</span><span>SERIE 0</span></div>
+    </div>
+    <div class="ann">
+      <span class="tag">DURCHSAGE</span>
+      <p>Ah, heute wird’s hügelig! Ich habe mir in dieser Stadt einmal die Schuhsohlen durchgelaufen — und es hat sich gelohnt. Rate mit!</p>
+      <p class="sig">MARCO, REISELEITUNG</p>
+    </div>
+    <button class="cta">Los geht’s!</button>
+    <p class="howto">6 HINWEISE, NACH JEDEM DARFST DU EINMAL RATEN.<br />JE FRÜHER DU TRIFFST, DESTO MEHR PUNKTE.<br />DANACH: 3 BONUS-FRAGEN.</p>
+  </section>
+
+  <section id="game" class="screen">
+    <div class="bhead">
+      <div class="brow1"><span>DAILY CITY QUIZ</span><span>SA 15 NOV</span></div>
+      <div class="dest">
+        <span class="lbl">ZIEL</span>
+        <span class="flaps">
+          <span class="flap">?</span><span class="flap">?</span><span class="flap">?</span>
+        </span>
+      </div>
+      <div class="brow3"><span>RÄTSEL 001</span><span>SERIE 0</span></div>
+    </div>
+
+    <div class="metro">
+      <div class="line"></div>
+      <div class="amberline"></div>
+      <div class="stations">
+        <span class="st done"></span><span class="st done"></span><span class="st done now"></span><span class="st"></span><span class="st"></span><span class="st"></span>
+      </div>
+      <div class="stlbl"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span></div>
+      <p class="metrocap">HALTESTELLE 3 VON 6</p>
+    </div>
+
+    <div class="hrow"><span class="hno">H1</span><p>Diese Küstenstadt erstreckt sich über mehrere Hügel an einer breiten Flussmündung — die Winter sind mild, und die Sonne zeigt sich hier über 2.800 Stunden im Jahr.</p></div>
+    <div class="hrow"><span class="hno">H2</span><p>Ein kleines Blätterteigtörtchen mit Vanillecreme ist der süße Stolz der Stadt — das Originalrezept aus einem Kloster wird bis heute geheim gehalten.</p></div>
+    <div class="hrow"><span class="hno">H3</span><p>Ein verheerendes Erdbeben zerstörte die Stadt 1755 fast vollständig — der Wiederaufbau machte sie zu einem Lehrbuchbeispiel moderner Stadtplanung.</p></div>
+
+    <div class="mtable">
+      <div class="mthead"><span>TIPP</span><span>RICHTUNG</span><span>STATUS</span></div>
+      <div class="mrow"><span class="city">Madrid</span><span class="dist">500 KM WESTL.</span><span class="chip">DANEBEN</span></div>
+      <div class="mrow"><span class="city">Porto</span><span class="dist">270 KM SÜDL.</span><span class="chip">DANEBEN</span></div>
+    </div>
+
+    <p class="quip">„Da war ich auch schon, aber heute sind wir woanders. Nächster Hinweis!“ — Marco</p>
+
+    <div class="ticket">
+      <span class="lbl">DEIN TIPP</span>
+      <input type="text" placeholder="Stadtname eingeben" />
+      <button>Raten</button>
+    </div>
+  </section>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".switch button");
+  tabs.forEach((b) =>
+    b.addEventListener("click", () => {
+      tabs.forEach((x) => x.classList.toggle("on", x === b));
+      document.querySelectorAll(".screen").forEach((s) => s.classList.toggle("on", s.id === b.dataset.s));
+    })
+  );
+</script>
+</body>
+</html>

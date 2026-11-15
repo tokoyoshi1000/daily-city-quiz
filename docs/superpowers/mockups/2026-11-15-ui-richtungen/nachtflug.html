@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mockup – Nachtflug</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,300..800&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --night: #081018;
+    --panel: rgba(13, 28, 42, 0.62);
+    --line: #16293b;
+    --line2: #1c3144;
+    --light: #ffb454;
+    --ink: #e9f0f6;
+    --dim: #8fa6b8;
+    --miss: #e4685f;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { min-height: 100%; }
+  body {
+    background: var(--night);
+    color: var(--ink);
+    font-family: "Bricolage Grotesque", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .sky { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 0; }
+  .tw { animation: tw 3.4s ease-in-out infinite; }
+  @keyframes tw { 0%, 100% { opacity: 0.25; } 50% { opacity: 0.95; } }
+  .pulse { animation: pulse 2.2s ease-out infinite; transform-origin: center; transform-box: fill-box; }
+  @keyframes pulse { 0% { transform: scale(0.6); opacity: 0.9; } 80% { transform: scale(2.6); opacity: 0; } 100% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .tw, .pulse { animation: none; } }
+
+  .app { position: relative; z-index: 1; max-width: 410px; margin: 0 auto; padding: 26px 20px 48px; }
+  .screen { display: none; }
+  .screen.on { display: block; }
+
+  header { display: flex; justify-content: space-between; align-items: baseline; }
+  .mark { font-weight: 650; font-size: 15px; letter-spacing: 0.01em; }
+  .streak { font-size: 13px; color: var(--dim); }
+  .streak .dot { display: inline-block; width: 7px; height: 7px; border-radius: 50%; background: var(--light); box-shadow: 0 0 8px 2px rgba(255, 180, 84, 0.55); margin-right: 6px; vertical-align: 1px; }
+
+  .hero { text-align: center; margin-top: 96px; }
+  .marker { width: 10px; height: 10px; border-radius: 50%; background: var(--light); box-shadow: 0 0 14px 4px rgba(255, 180, 84, 0.5); margin: 0 auto 22px; }
+  h1 { font-size: 46px; font-weight: 790; letter-spacing: -0.02em; line-height: 1.02; font-variation-settings: "opsz" 70; }
+  .date { color: var(--dim); font-size: 14px; margin-top: 10px; }
+
+  .radio { margin-top: 42px; background: var(--panel); border: 1px solid var(--line); border-left: 2px solid var(--light); border-radius: 14px; padding: 15px 16px; }
+  .radio .who { font-size: 12px; color: var(--dim); margin-bottom: 6px; }
+  .radio p { font-size: 15.5px; line-height: 1.55; }
+
+  .cta { display: block; width: 100%; margin-top: 26px; background: var(--light); color: var(--night); border: 0; border-radius: 12px; font: 700 17px "Bricolage Grotesque", sans-serif; padding: 15px; cursor: pointer; }
+  .cta:hover { filter: brightness(1.06); }
+  button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid var(--light); outline-offset: 2px; }
+  .howto { color: var(--dim); font-size: 13px; line-height: 1.55; text-align: center; margin-top: 14px; }
+
+  .progress { display: flex; justify-content: space-between; align-items: center; margin-top: 28px; }
+  .progress .txt { font-size: 13px; color: var(--dim); }
+  .lights { display: flex; gap: 8px; }
+  .lights span { width: 8px; height: 8px; border-radius: 50%; border: 1px solid var(--line2); }
+  .lights span.lit { background: var(--light); border-color: var(--light); box-shadow: 0 0 7px 2px rgba(255, 180, 84, 0.45); }
+
+  .hint { display: flex; gap: 12px; background: var(--panel); border: 1px solid var(--line); border-radius: 14px; padding: 14px 15px; margin-top: 10px; }
+  .hint .n { flex: 0 0 24px; font-size: 20px; font-weight: 790; color: #2e4a63; line-height: 1.2; }
+  .hint p { font-size: 14.5px; line-height: 1.52; color: rgba(233, 240, 246, 0.92); }
+
+  .guesses { margin-top: 22px; }
+  .guesses h3 { font-size: 13px; font-weight: 600; color: var(--dim); }
+  .guess { display: flex; justify-content: space-between; align-items: center; padding: 11px 2px; border-bottom: 1px solid var(--line); }
+  .guess .city { font-weight: 640; font-size: 15px; }
+  .guess .x { color: var(--miss); margin-right: 8px; }
+  .guess .dir { font-size: 13px; color: var(--dim); }
+  .guess .arrow { display: inline-block; color: var(--light); margin-right: 5px; }
+
+  .quip { margin-top: 16px; font-size: 13.5px; font-style: italic; color: var(--dim); }
+  .entry { display: flex; gap: 10px; margin-top: 18px; }
+  .entry input { flex: 1; background: #0d1c2a; border: 1px solid var(--line2); border-radius: 12px; padding: 13px 14px; color: var(--ink); font: 400 15px "Bricolage Grotesque", sans-serif; }
+  .entry input::placeholder { color: #587089; }
+  .entry button { background: var(--light); color: var(--night); border: 0; border-radius: 12px; font: 700 15px "Bricolage Grotesque", sans-serif; padding: 13px 20px; cursor: pointer; }
+
+  .switch { position: fixed; top: 10px; right: 10px; z-index: 5; display: flex; gap: 6px; }
+  .switch a, .switch button { font: 500 12px "Bricolage Grotesque", sans-serif; background: rgba(8, 16, 24, 0.85); border: 1px solid var(--line2); color: #b8c7d4; padding: 6px 11px; border-radius: 999px; text-decoration: none; cursor: pointer; }
+  .switch .on { background: var(--light); border-color: var(--light); color: var(--night); font-weight: 700; }
+</style>
+</head>
+<body>
+<svg class="sky" viewBox="0 0 390 844" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+  <defs>
+    <filter id="g" x="-80%" y="-80%" width="260%" height="260%">
+      <feGaussianBlur stdDeviation="1.4" result="b" />
+      <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+    </filter>
+  </defs>
+  <circle cx="195" cy="1510" r="1120" fill="none" stroke="#16293b" stroke-width="1" />
+  <circle cx="195" cy="1510" r="1190" fill="none" stroke="#121f2e" stroke-width="1" />
+  <path d="M60,0 C96,280 96,560 60,844" fill="none" stroke="#121f2e" />
+  <path d="M195,0 C195,280 195,560 195,844" fill="none" stroke="#121f2e" />
+  <path d="M330,0 C294,280 294,560 330,844" fill="none" stroke="#121f2e" />
+  <path d="M0,230 C130,205 260,205 390,230" fill="none" stroke="#121f2e" />
+  <path d="M0,520 C130,498 260,498 390,520" fill="none" stroke="#121f2e" />
+  <path d="M70,640 C140,430 225,295 302,186" fill="none" stroke="#ffb454" stroke-opacity="0.5" stroke-dasharray="2 7" />
+  <circle cx="70" cy="640" r="3" fill="none" stroke="#ffb454" stroke-opacity="0.8" />
+  <g filter="url(#g)" fill="#ffb454">
+    <circle cx="302" cy="186" r="3.2" />
+    <circle class="pulse" cx="302" cy="186" r="3.2" fill="none" stroke="#ffb454" />
+    <circle cx="48" cy="120" r="1.2" opacity="0.6" class="tw" style="animation-delay:.4s" />
+    <circle cx="90" cy="88" r="0.9" opacity="0.5" />
+    <circle cx="128" cy="150" r="1.4" opacity="0.7" class="tw" style="animation-delay:1.6s" />
+    <circle cx="210" cy="70" r="1" opacity="0.5" class="tw" style="animation-delay:2.4s" />
+    <circle cx="255" cy="120" r="1.3" opacity="0.6" />
+    <circle cx="340" cy="90" r="1" opacity="0.5" class="tw" style="animation-delay:.9s" />
+    <circle cx="355" cy="250" r="1.4" opacity="0.65" />
+    <circle cx="30" cy="330" r="1.1" opacity="0.5" class="tw" style="animation-delay:2s" />
+    <circle cx="140" cy="395" r="0.9" opacity="0.45" />
+    <circle cx="245" cy="430" r="1.2" opacity="0.55" class="tw" style="animation-delay:1.1s" />
+    <circle cx="328" cy="470" r="1" opacity="0.5" />
+    <circle cx="55" cy="540" r="1.3" opacity="0.6" class="tw" style="animation-delay:3s" />
+    <circle cx="180" cy="600" r="1" opacity="0.5" />
+    <circle cx="300" cy="640" r="1.2" opacity="0.55" class="tw" style="animation-delay:.2s" />
+    <circle cx="90" cy="700" r="1.4" opacity="0.6" />
+    <circle cx="230" cy="740" r="1" opacity="0.5" class="tw" style="animation-delay:1.9s" />
+    <circle cx="330" cy="780" r="1.2" opacity="0.55" />
+    <circle cx="160" cy="800" r="0.9" opacity="0.45" />
+  </g>
+</svg>
+
+<nav class="switch">
+  <a href="./index.html">Übersicht</a>
+  <button class="on" data-s="start">Start</button>
+  <button data-s="game">Spiel</button>
+</nav>
+
+<div class="app">
+  <section id="start" class="screen on">
+    <header>
+      <span class="mark">Daily City Quiz</span>
+      <span class="streak"><span class="dot"></span>Serie 0</span>
+    </header>
+    <div class="hero">
+      <div class="marker"></div>
+      <h1>Rätsel #1</h1>
+      <p class="date">Samstag, 15. November 2026</p>
+    </div>
+    <div class="radio">
+      <p class="who">Marco, dein Reiseleiter</p>
+      <p>Ah, heute wird’s hügelig! Ich habe mir in dieser Stadt einmal die Schuhsohlen durchgelaufen — und es hat sich gelohnt. Rate mit!</p>
+    </div>
+    <button class="cta">Los geht’s!</button>
+    <p class="howto">6 Hinweise, nach jedem darfst du einmal raten. Je früher du die Stadt errätst, desto mehr Punkte — danach warten 3 Bonus-Fragen.</p>
+  </section>
+
+  <section id="game" class="screen">
+    <header>
+      <span class="mark">Daily City Quiz</span>
+      <span class="streak"><span class="dot"></span>Serie 0</span>
+    </header>
+    <div class="progress">
+      <span class="txt">Hinweis 3 von 6</span>
+      <span class="lights"><span class="lit"></span><span class="lit"></span><span class="lit"></span><span></span><span></span><span></span></span>
+    </div>
+    <div class="hint"><span class="n">1</span><p>Diese Küstenstadt erstreckt sich über mehrere Hügel an einer breiten Flussmündung — die Winter sind mild, und die Sonne zeigt sich hier über 2.800 Stunden im Jahr.</p></div>
+    <div class="hint"><span class="n">2</span><p>Ein kleines Blätterteigtörtchen mit Vanillecreme ist der süße Stolz der Stadt — das Originalrezept aus einem Kloster wird bis heute geheim gehalten.</p></div>
+    <div class="hint"><span class="n">3</span><p>Ein verheerendes Erdbeben zerstörte die Stadt 1755 fast vollständig — der Wiederaufbau machte sie zu einem Lehrbuchbeispiel moderner Stadtplanung.</p></div>
+    <div class="guesses">
+      <h3>Deine Tipps</h3>
+      <div class="guess">
+        <span><span class="x">✕</span><span class="city">Madrid</span></span>
+        <span class="dir"><span class="arrow" style="transform:rotate(180deg)">➤</span>ca. 500 km westlich</span>
+      </div>
+      <div class="guess">
+        <span><span class="x">✕</span><span class="city">Porto</span></span>
+        <span class="dir"><span class="arrow" style="transform:rotate(90deg)">➤</span>ca. 270 km südlich</span>
+      </div>
+    </div>
+    <p class="quip">„Da war ich auch schon, aber heute sind wir woanders. Nächster Hinweis!“ — Marco</p>
+    <div class="entry">
+      <input type="text" placeholder="Welche Stadt suchen wir?" />
+      <button>Raten</button>
+    </div>
+  </section>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".switch button");
+  tabs.forEach((b) =>
+    b.addEventListener("click", () => {
+      tabs.forEach((x) => x.classList.toggle("on", x === b));
+      document.querySelectorAll(".screen").forEach((s) => s.classList.toggle("on", s.id === b.dataset.s));
+    })
+  );
+</script>
+</body>
+</html>

@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Mockup – Atlas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --paper: #f1eada;
+    --ink: #2e2a23;
+    --soft: #6b6353;
+    --sea: #33617a;
+    --contour: #cec2a6;
+    --stamp: #a93b32;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { min-height: 100%; }
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: "EB Garamond", serif;
+    font-size: 17px;
+    line-height: 1.6;
+  }
+  body::after {
+    content: "";
+    position: fixed; inset: 0; pointer-events: none; opacity: 0.05;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  .contours { position: fixed; z-index: 0; pointer-events: none; opacity: 0.7; }
+  .contours.bl { left: -40px; bottom: -30px; }
+  .contours.tr { right: -60px; top: -40px; transform: rotate(160deg); }
+
+  .plate { position: relative; z-index: 1; max-width: 430px; margin: 14px auto; border: 1.5px solid var(--ink); padding: 5px; }
+  .inner { border: 1px solid var(--ink); padding: 26px 22px 34px; position: relative; }
+
+  .cart { text-align: center; }
+  .cart .title { font-weight: 600; font-size: 15px; letter-spacing: 0.42em; text-transform: uppercase; text-indent: 0.42em; }
+  .cart .title::before, .cart .title::after { content: ""; display: inline-block; width: 34px; height: 1px; background: var(--ink); vertical-align: 4px; margin: 0 12px; }
+  .cart .sub { font-style: italic; font-size: 14.5px; color: var(--soft); margin-top: 6px; }
+  .status { display: flex; justify-content: space-between; font-size: 14px; color: var(--soft); margin-top: 14px; }
+  .status u { text-underline-offset: 3px; }
+
+  .screen { display: none; }
+  .screen.on { display: block; }
+
+  .hero { text-align: center; margin-top: 64px; }
+  .hero h1 { font-weight: 500; font-size: clamp(24px, 7.4vw, 31px); letter-spacing: 0.3em; text-indent: 0.3em; text-transform: uppercase; }
+  .hero .q { font-style: italic; font-size: 17px; color: var(--sea); margin-top: 10px; }
+
+  .journal { margin-top: 46px; padding: 18px 4px; border-top: 1px solid var(--contour); border-bottom: 1px solid var(--contour); }
+  .journal p { font-style: italic; font-size: 16.5px; }
+  .journal .sig { font-style: normal; font-variant: small-caps; letter-spacing: 0.12em; font-size: 14px; color: var(--soft); text-align: right; margin-top: 8px; }
+
+  .cta { display: block; width: 100%; margin-top: 32px; background: var(--ink); color: var(--paper); border: 0; border-radius: 2px; font: 600 18px "EB Garamond", serif; padding: 14px; cursor: pointer; box-shadow: 3px 3px 0 var(--contour); }
+  .cta:hover { box-shadow: 2px 2px 0 var(--contour); transform: translate(1px, 1px); }
+  button:focus-visible, input:focus-visible, a:focus-visible { outline: 2px solid var(--sea); outline-offset: 2px; }
+  .howto { font-style: italic; font-size: 14.5px; color: var(--soft); text-align: center; margin-top: 16px; }
+
+  .loghead { text-align: center; margin-top: 30px; font-variant: small-caps; letter-spacing: 0.18em; font-size: 14px; }
+  .ticks { display: flex; justify-content: center; gap: 9px; margin-top: 9px; }
+  .ticks span { width: 7px; height: 7px; border-radius: 50%; border: 1px solid var(--ink); }
+  .ticks span.done { background: var(--ink); }
+
+  .entrylog { margin-top: 10px; }
+  .entrylog .e { margin-top: 18px; }
+  .entrylog .no { display: block; font-variant: small-caps; letter-spacing: 0.14em; font-size: 14px; color: var(--sea); margin-bottom: 3px; }
+  .entrylog p { font-size: 16px; }
+  .orn { width: 44px; height: 1px; background: var(--contour); margin: 18px auto 0; }
+
+  .stamp {
+    position: absolute; top: 108px; right: 0; transform: rotate(-7deg);
+    border: 2px solid var(--stamp); border-radius: 4px; padding: 5px 10px;
+    color: var(--stamp); text-align: center; opacity: 0.8;
+    font-variant: small-caps; letter-spacing: 0.16em; font-size: 12.5px; line-height: 1.5;
+    box-shadow: inset 0 0 0 1.5px var(--paper), inset 0 0 0 2.5px var(--stamp);
+  }
+
+  .misses { margin-top: 26px; }
+  .misses h3 { font-variant: small-caps; letter-spacing: 0.18em; font-weight: 500; font-size: 14px; border-bottom: 1px solid var(--contour); padding-bottom: 5px; }
+  .misses .m { margin-top: 10px; font-size: 16px; }
+  .misses .x { color: var(--stamp); margin-right: 8px; }
+  .misses .name { text-decoration: line-through; text-decoration-color: var(--stamp); text-decoration-thickness: 1.5px; }
+  .misses .d { font-style: italic; color: var(--soft); }
+
+  .quip { margin-top: 20px; font-style: italic; font-size: 15.5px; color: var(--soft); }
+  .guessform { margin-top: 24px; }
+  .guessform input { width: 100%; background: transparent; border: 0; border-bottom: 1px solid var(--ink); font: italic 400 17px "EB Garamond", serif; color: var(--ink); padding: 8px 2px; }
+  .guessform input::placeholder { color: #9a8f79; }
+  .guessform button { display: block; width: 100%; margin-top: 14px; background: var(--ink); color: var(--paper); border: 0; border-radius: 2px; font: 600 16.5px "EB Garamond", serif; padding: 12px; cursor: pointer; box-shadow: 3px 3px 0 var(--contour); }
+
+  .rose { display: block; margin: 30px auto 0; opacity: 0.55; }
+
+  .switch { position: fixed; top: 10px; right: 10px; z-index: 5; display: flex; gap: 6px; }
+  .switch a, .switch button { font: 500 12px Georgia, serif; background: rgba(46, 42, 35, 0.92); border: 1px solid #4a4435; color: #e8e1d1; padding: 6px 11px; border-radius: 999px; text-decoration: none; cursor: pointer; }
+  .switch .on { background: var(--paper); border-color: var(--ink); color: var(--ink); font-weight: 700; }
+</style>
+</head>
+<body>
+<svg class="contours bl" width="320" height="320" viewBox="0 0 320 320" aria-hidden="true" fill="none" stroke="#cec2a6" stroke-width="1">
+  <path d="M30,290 C10,230 40,180 95,170 C150,160 175,195 170,235 C165,278 110,305 30,290 Z" />
+  <path d="M55,275 C40,235 60,200 100,192 C140,184 152,210 148,238 C144,268 105,288 55,275 Z" />
+  <path d="M80,258 C72,235 85,215 108,211 C131,207 136,224 133,242 C130,258 102,268 80,258 Z" />
+  <path d="M230,60 C260,30 300,40 310,80 C320,120 290,150 250,140 C215,131 205,88 230,60 Z" />
+  <path d="M245,75 C265,55 292,62 299,90 C306,118 285,137 258,130 C233,123 228,93 245,75 Z" />
+</svg>
+<svg class="contours tr" width="260" height="260" viewBox="0 0 320 320" aria-hidden="true" fill="none" stroke="#cec2a6" stroke-width="1">
+  <path d="M30,290 C10,230 40,180 95,170 C150,160 175,195 170,235 C165,278 110,305 30,290 Z" />
+  <path d="M55,275 C40,235 60,200 100,192 C140,184 152,210 148,238 C144,268 105,288 55,275 Z" />
+</svg>
+
+<nav class="switch">
+  <a href="./index.html">Übersicht</a>
+  <button class="on" data-s="start">Start</button>
+  <button data-s="game">Spiel</button>
+</nav>
+
+<div class="plate">
+  <div class="inner">
+    <div class="cart">
+      <p class="title">Daily City Quiz</p>
+      <p class="sub">Tafel № 1, aufgenommen am 15. November 2026</p>
+    </div>
+    <div class="status">
+      <span>Serie: 0 Tage</span>
+      <span><u>Statistik</u></span>
+    </div>
+
+    <section id="start" class="screen on">
+      <div class="hero">
+        <h1>Terra incognita</h1>
+        <p class="q">Welche Stadt verbirgt sich heute?</p>
+      </div>
+      <div class="journal">
+        <p>„Ah, heute wird’s hügelig! Ich habe mir in dieser Stadt einmal die Schuhsohlen durchgelaufen — und es hat sich gelohnt. Rate mit!“</p>
+        <p class="sig">Marco, unterwegs</p>
+      </div>
+      <button class="cta">Los geht’s!</button>
+      <p class="howto">6 Hinweise, nach jedem darfst du einmal raten. Je früher du die Stadt errätst, desto mehr Punkte — danach warten 3 Bonus-Fragen.</p>
+      <svg class="rose" width="54" height="54" viewBox="0 0 54 54" fill="none" stroke="#2e2a23" stroke-width="1">
+        <circle cx="27" cy="27" r="9" />
+        <path d="M27,2 L30,24 L27,27 L24,24 Z" fill="#2e2a23" stroke="none" />
+        <path d="M27,52 L30,30 L27,27 L24,30 Z" />
+        <path d="M2,27 L24,24 L27,27 L24,30 Z" />
+        <path d="M52,27 L30,24 L27,27 L30,30 Z" />
+        <path d="M27,10 L27,0 M27,44 L27,54 M10,27 L0,27 M44,27 L54,27" stroke-width="0.5" />
+      </svg>
+    </section>
+
+    <section id="game" class="screen">
+      <div class="stamp">Unterwegs<br />15. Nov 2026</div>
+      <p class="loghead">Logbuch, Hinweis 3 von 6</p>
+      <div class="ticks"><span class="done"></span><span class="done"></span><span class="done"></span><span></span><span></span><span></span></div>
+      <div class="entrylog">
+        <div class="e">
+          <span class="no">№ 1</span>
+          <p>Diese Küstenstadt erstreckt sich über mehrere Hügel an einer breiten Flussmündung — die Winter sind mild, und die Sonne zeigt sich hier über 2.800 Stunden im Jahr.</p>
+          <div class="orn"></div>
+        </div>
+        <div class="e">
+          <span class="no">№ 2</span>
+          <p>Ein kleines Blätterteigtörtchen mit Vanillecreme ist der süße Stolz der Stadt — das Originalrezept aus einem Kloster wird bis heute geheim gehalten.</p>
+          <div class="orn"></div>
+        </div>
+        <div class="e">
+          <span class="no">№ 3</span>
+          <p>Ein verheerendes Erdbeben zerstörte die Stadt 1755 fast vollständig — der Wiederaufbau machte sie zu einem Lehrbuchbeispiel moderner Stadtplanung.</p>
+        </div>
+      </div>
+      <div class="misses">
+        <h3>Verworfene Ziele</h3>
+        <p class="m"><span class="x">✗</span><span class="name">Madrid</span> <span class="d">— das Ziel liegt ca. 500 km westlich</span></p>
+        <p class="m"><span class="x">✗</span><span class="name">Porto</span> <span class="d">— das Ziel liegt ca. 270 km südlich</span></p>
+      </div>
+      <p class="quip">„Da war ich auch schon, aber heute sind wir woanders. Nächster Hinweis!“ — Marco</p>
+      <div class="guessform">
+        <input type="text" placeholder="Deine Vermutung …" />
+        <button>Raten</button>
+      </div>
+    </section>
+  </div>
+</div>
+
+<script>
+  const tabs = document.querySelectorAll(".switch button");
+  tabs.forEach((b) =>
+    b.addEventListener("click", () => {
+      tabs.forEach((x) => x.classList.toggle("on", x === b));
+      document.querySelectorAll(".screen").forEach((s) => s.classList.toggle("on", s.id === b.dataset.s));
+    })
+  );
+</script>
+</body>
+</html>

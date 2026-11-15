@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>UI-Richtungen – Übersicht</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { background: #101114; color: #eceff2; font-family: -apple-system, "Segoe UI", sans-serif; padding: 28px 20px 48px; }
+  .head { max-width: 860px; margin: 0 auto; }
+  h1 { font-size: 22px; font-weight: 700; }
+  .sub { color: #9aa3ad; font-size: 14px; line-height: 1.6; margin-top: 8px; }
+  .grid { max-width: 860px; margin: 26px auto 0; display: flex; flex-wrap: wrap; gap: 22px; }
+  a.card { text-decoration: none; color: inherit; display: block; width: 252px; }
+  .frame { width: 252px; height: 432px; overflow: hidden; border: 1px solid #26292e; border-radius: 12px; background: #000; }
+  .frame iframe { width: 420px; height: 720px; border: 0; transform: scale(0.6); transform-origin: 0 0; pointer-events: none; }
+  .card h3 { font-size: 16px; margin-top: 12px; }
+  .card p { font-size: 13px; color: #9aa3ad; line-height: 1.55; margin-top: 4px; }
+  .card .open { display: inline-block; margin-top: 8px; font-size: 13px; color: #9cc3ff; }
+  a.card:hover .frame { border-color: #4a525e; }
+  a.card:hover .open { text-decoration: underline; }
+  a:focus-visible { outline: 2px solid #9cc3ff; outline-offset: 3px; border-radius: 8px; }
+</style>
+</head>
+<body>
+<div class="head">
+  <h1>Drei Richtungen für den neuen Look</h1>
+  <p class="sub">Gleicher Inhalt (Rätsel #1, Lissabon), drei völlig verschiedene Welten. Klick eine Richtung an, um sie in groß zu sehen — oben rechts kannst du dort zwischen Startscreen und Spielansicht umschalten.</p>
+</div>
+<div class="grid">
+  <a class="card" href="./nachtflug.html">
+    <div class="frame"><iframe src="./nachtflug.html" loading="lazy" tabindex="-1" title="Nachtflug"></iframe></div>
+    <h3>1 · Nachtflug</h3>
+    <p>Die Welt bei Nacht: glimmende Stadtlichter, eine gestrichelte Route, warmes Bernstein auf tiefem Blau.</p>
+    <span class="open">In groß öffnen</span>
+  </a>
+  <a class="card" href="./atlas.html">
+    <div class="frame"><iframe src="./atlas.html" loading="lazy" tabindex="-1" title="Atlas"></iframe></div>
+    <h3>2 · Atlas</h3>
+    <p>Eine Tafel aus einem alten Schulatlas: Papier, Doppelrahmen, gravierte Serifen, Passstempel in Rot.</p>
+    <span class="open">In groß öffnen</span>
+  </a>
+  <a class="card" href="./transit.html">
+    <div class="frame"><iframe src="./transit.html" loading="lazy" tabindex="-1" title="Transit"></iframe></div>
+    <h3>3 · Transit</h3>
+    <p>Abflugtafel am Flughafen: Fallblatt-Anzeige, die 6 Hinweise als Haltestellen, dein Tipp als Ticket.</p>
+    <span class="open">In groß öffnen</span>
+  </a>
+</div>
+</body>
+</html>
