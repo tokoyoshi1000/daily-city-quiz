@@ -7,7 +7,7 @@ export function StartScreen({ puzzle, onStart }: { puzzle: Puzzle; stats?: Stats
       <div className="text-center">
         <div className="text-6xl">🏙️</div>
         <h2 className="mt-3 text-2xl font-bold">Rätsel #{puzzle.number}</h2>
-        <p className="text-sm text-ink-dim">{puzzle.date}</p>
+        <p className="text-sm text-ink-dim">{puzzle.date.split("-").reverse().join(".")}</p>
       </div>
       <HostBubble>{puzzle.host.intro}</HostBubble>
       <button

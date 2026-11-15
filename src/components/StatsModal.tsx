@@ -44,6 +44,10 @@ export function StatsModal({ stats, streak, onClose }: { stats: Stats; streak: n
           <Stat label="Streak" value={streak} />
           <Stat label="Rekord" value={stats.maxStreak} />
         </div>
+        <p className="-mt-3 mb-4 text-center text-xs text-ink-dim">
+          Ø {stats.played === 0 ? "–" : (stats.totalPoints / stats.played).toFixed(1).replace(".", ",")}{" "}
+          Punkte pro Rätsel
+        </p>
         <p className="mb-2 text-xs text-ink-dim">Gelöst nach Hinweis …</p>
         <div className="flex flex-col gap-1.5">
           {stats.solvedByHint.map((count, i) => (

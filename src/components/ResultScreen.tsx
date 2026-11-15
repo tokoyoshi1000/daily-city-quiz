@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import type { GameState, Puzzle, Stats } from "../types";
 import { actOnePoints, quizPoints, totalPoints } from "../game/scoring";
 import { buildShareText } from "../game/share";
+import { effectiveStreak } from "../game/stats";
 
 function msUntilNextMidnight(now: Date): number {
   const next = new Date(now);
@@ -37,11 +38,12 @@ export function ResultScreen({
   }, []);
 
   const quizCorrect = quizPoints(state.quizAnswers);
+  const streak = effectiveStreak(stats, state.puzzleDate);
   const shareText = buildShareText({
     number: puzzle.number,
     solvedAtHint: state.solvedAtHint,
     quizCorrect,
-    streak: stats.currentStreak,
+    streak: streak,
   });
 
   async function share() {
@@ -66,7 +68,7 @@ export function ResultScreen({
       <div className="flex justify-center gap-6 text-sm text-ink-dim">
         <span>🏙️ Stadt: {actOnePoints(state.solvedAtHint)} P.</span>
         <span>🧠 Quiz: {quizCorrect} / 3</span>
-        <span>🔥 Streak: {stats.currentStreak}</span>
+        <span>🔥 Streak: {streak}</span>
       </div>
       <pre className="whitespace-pre-wrap rounded-xl bg-card p-4 text-left text-sm">{shareText}</pre>
       <button
