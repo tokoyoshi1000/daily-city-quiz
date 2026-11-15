@@ -1,12 +1,24 @@
+import { useEffect, useMemo } from "react";
 import type { Stats } from "../types";
 import { storageAvailable } from "../storage/storage";
 
 export function StatsModal({ stats, onClose }: { stats: Stats; onClose: () => void }) {
+  const persistenceMissing = useMemo(() => !storageAvailable(), []);
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [onClose]);
   const maxBar = Math.max(1, ...stats.solvedByHint);
   const solvedPercent = stats.played === 0 ? 0 : Math.round((stats.solved / stats.played) * 100);
 
   return (
     <div
+      role="dialog"
+      aria-modal="true"
+      aria-label="Statistik"
       className="fixed inset-0 z-20 flex items-center justify-center bg-black/60 px-4"
       onClick={onClose}
     >
@@ -20,7 +32,7 @@ export function StatsModal({ stats, onClose }: { stats: Stats; onClose: () => vo
             ✕
           </button>
         </div>
-        {!storageAvailable() && (
+        {persistenceMissing && (
           <p className="mb-3 text-xs text-wrong">
             ⚠️ Dein Browser speichert gerade nichts dauerhaft (Privatmodus?) — Statistik und Streak
             gehen beim Schließen verloren.

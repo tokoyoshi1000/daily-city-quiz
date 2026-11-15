@@ -9,8 +9,15 @@ export function CityAutocomplete({ cities, onGuess }: { cities: City[]; onGuess:
   const suggestions = useMemo(() => {
     const q = normalizeCityInput(query);
     if (selected || q.length < 2) return [];
+    const rank = (c: City): number => {
+      const names = [c.name, ...c.aliases].map(normalizeCityInput);
+      if (names.some((n) => n === q)) return 0;
+      if (names.some((n) => n.startsWith(q))) return 1;
+      return 2;
+    };
     return cities
       .filter((c) => [c.name, ...c.aliases].some((a) => normalizeCityInput(a).includes(q)))
+      .sort((a, b) => rank(a) - rank(b))
       .slice(0, 8);
   }, [cities, query, selected]);
 
@@ -36,6 +43,10 @@ export function CityAutocomplete({ cities, onGuess }: { cities: City[]; onGuess:
       >
         <input
           className="min-w-0 flex-1 rounded-xl border border-card bg-night-soft px-4 py-3 outline-none focus:border-accent"
+          aria-label="Stadt eingeben"
+          autoComplete="off"
+          autoCapitalize="off"
+          spellCheck={false}
           placeholder="Stadt eingeben …"
           value={query}
           onChange={(e) => {
@@ -52,7 +63,7 @@ export function CityAutocomplete({ cities, onGuess }: { cities: City[]; onGuess:
         </button>
       </form>
       {suggestions.length > 0 && (
-        <ul className="absolute bottom-full z-10 mb-2 w-full overflow-hidden rounded-xl border border-card bg-night-soft">
+        <ul className="absolute bottom-full z-10 mb-2 max-h-64 w-full overflow-hidden overflow-y-auto rounded-xl border border-card bg-night-soft">
           {suggestions.map((c) => (
             <li key={`${c.name}|${c.country}`}>
               <button

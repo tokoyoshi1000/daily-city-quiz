@@ -36,3 +36,11 @@ export function applyCompletedGame(stats: Stats, game: CompletedGame): Stats {
     totalPoints: stats.totalPoints + game.points,
   };
 }
+
+/** Streak wie angezeigt: 0, wenn der letzte gespielte Tag weder heute noch gestern ist. */
+export function effectiveStreak(stats: Stats, today: string): number {
+  if (stats.lastPlayedDate === today || stats.lastPlayedDate === previousDateString(today)) {
+    return stats.currentStreak;
+  }
+  return 0;
+}

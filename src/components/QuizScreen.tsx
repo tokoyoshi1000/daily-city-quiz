@@ -39,7 +39,7 @@ export function QuizScreen({
 
   return (
     <div className="flex flex-col gap-4 pt-2">
-      <div className="text-xs text-ink-dim">Bonus-Frage {state.quizIndex + 1} / 3</div>
+      <div className="text-xs text-ink-dim">Bonus-Frage {state.quizIndex + 1} / {puzzle.quiz.length}</div>
       {!answered && (
         <div className="h-2 overflow-hidden rounded-full bg-card">
           <div
@@ -72,7 +72,7 @@ export function QuizScreen({
             className="rounded-xl bg-accent py-3 font-bold text-night active:scale-95"
             onClick={onNext}
           >
-            {state.quizIndex === 2 ? "Zum Ergebnis 🏁" : "Nächste Frage →"}
+            {state.quizIndex === puzzle.quiz.length - 1 ? "Zum Ergebnis 🏁" : "Nächste Frage →"}
           </button>
         </>
       )}

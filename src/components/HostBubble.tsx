@@ -6,7 +6,7 @@ export function HostBubble({ children }: { children: ReactNode }) {
       <div className="shrink-0 text-3xl" aria-hidden>
         🧭
       </div>
-      <div className="rounded-2xl rounded-tl-sm bg-card px-4 py-3 text-sm leading-relaxed">
+      <div className="min-w-0 break-words rounded-2xl rounded-tl-sm bg-card px-4 py-3 text-sm leading-relaxed">
         {children}
       </div>
     </div>

@@ -61,7 +61,7 @@ export function GuessScreen({
         </div>
       )}
 
-      <div className="fixed inset-x-0 bottom-0 mx-auto w-full max-w-md bg-night px-4 pb-6 pt-2">
+      <div className="fixed inset-x-0 bottom-0 mx-auto w-full max-w-md bg-night px-4 pb-[calc(1.5rem+env(safe-area-inset-bottom))] pt-2">
         <CityAutocomplete cities={cities} onGuess={onGuess} />
       </div>
     </div>

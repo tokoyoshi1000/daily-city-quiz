@@ -3,7 +3,7 @@ import type { ReactNode } from "react";
 import type { City, GameState, Puzzle, Stats } from "./types";
 import { createGameReducer, createInitialState, type GameAction } from "./game/reducer";
 import { localDateString, puzzleForDate } from "./game/dates";
-import { applyCompletedGame } from "./game/stats";
+import { applyCompletedGame, effectiveStreak } from "./game/stats";
 import { totalPoints } from "./game/scoring";
 import { loadGameState, loadStats, saveGameState, saveStats } from "./storage/storage";
 import { EmptyScreen } from "./components/EmptyScreen";
@@ -63,7 +63,7 @@ function Game({ puzzle, today }: { puzzle: Puzzle; today: string }) {
       <header className="mb-5 flex items-center justify-between">
         <h1 className="text-lg font-bold">🌍 Daily City Quiz</h1>
         <div className="flex items-center gap-3 text-sm">
-          <span title="Streak">🔥 {stats.currentStreak}</span>
+          <span title="Streak">🔥 {effectiveStreak(stats, today)}</span>
           <button type="button" aria-label="Statistik" onClick={() => setShowStats(true)}>
             📊
           </button>

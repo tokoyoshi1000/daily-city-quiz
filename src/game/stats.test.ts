@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyCompletedGame, emptyStats } from "./stats";
+import { applyCompletedGame, effectiveStreak, emptyStats } from "./stats";
 
 describe("emptyStats", () => {
   it("startet bei null", () => {
@@ -47,5 +47,18 @@ describe("applyCompletedGame", () => {
     const day1 = applyCompletedGame(emptyStats(), { date: "2026-11-14", solvedAtHint: 3, points: 7 });
     const again = applyCompletedGame(day1, { date: "2026-11-14", solvedAtHint: 3, points: 7 });
     expect(again).toBe(day1); // identische Referenz → keine Doppelzählung
+  });
+});
+
+describe("effectiveStreak", () => {
+  it("zeigt den Streak, wenn zuletzt heute oder gestern gespielt wurde", () => {
+    const s = { ...emptyStats(), currentStreak: 5, lastPlayedDate: "2026-11-14" };
+    expect(effectiveStreak(s, "2026-11-14")).toBe(5);
+    expect(effectiveStreak(s, "2026-11-15")).toBe(5);
+  });
+  it("zeigt 0 nach einem verpassten Tag", () => {
+    const s = { ...emptyStats(), currentStreak: 5, lastPlayedDate: "2026-11-14" };
+    expect(effectiveStreak(s, "2026-11-17")).toBe(0);
+    expect(effectiveStreak(emptyStats(), "2026-11-17")).toBe(0);
   });
 });
