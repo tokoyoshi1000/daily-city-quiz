@@ -219,7 +219,7 @@ import { formatBoardDate, formatPuzzleNumber } from "./format";
 
 describe("formatBoardDate", () => {
   it("formatiert ein Datum als Tafel-Code", () => {
-    expect(formatBoardDate("2026-11-15")).toBe("SA 15. NOV");
+    expect(formatBoardDate("2026-11-15")).toBe("SO 15. NOV");
   });
   it("funktioniert am Jahresanfang", () => {
     expect(formatBoardDate("2027-01-01")).toBe("FR 1. JAN");
@@ -250,7 +250,7 @@ Run: `npm test` — Expected: FAIL (`format.ts` existiert nicht).
 const WEEKDAYS = ["SO", "MO", "DI", "MI", "DO", "FR", "SA"];
 const MONTHS = ["JAN", "FEB", "MÄR", "APR", "MAI", "JUN", "JUL", "AUG", "SEP", "OKT", "NOV", "DEZ"];
 
-/** Tafel-Code für ein YYYY-MM-DD-Datum, z. B. "SA 15. NOV" (Rechnung in UTC-Mittag, DST-sicher). */
+/** Tafel-Code für ein YYYY-MM-DD-Datum, z. B. "SO 15. NOV" (Rechnung in UTC-Mittag, DST-sicher). */
 export function formatBoardDate(date: string): string {
   const d = new Date(`${date}T12:00:00Z`);
   return `${WEEKDAYS[d.getUTCDay()]} ${d.getUTCDate()}. ${MONTHS[d.getUTCMonth()]}`;
