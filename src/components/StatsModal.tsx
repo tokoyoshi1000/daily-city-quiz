@@ -50,12 +50,14 @@ export function StatsModal({ stats, streak, onClose }: { stats: Stats; streak: n
             <div key={i} className="flex items-center gap-2 text-xs">
               <span className="w-3 text-ink-dim">{i + 1}</span>
               <div className="h-4 flex-1 rounded bg-card">
-                <div
-                  className="flex h-full items-center justify-end rounded bg-accent pr-1.5 text-[10px] font-bold text-night"
-                  style={{ width: `${Math.max(count > 0 ? 12 : 0, (count / maxBar) * 100)}%` }}
-                >
-                  {count > 0 ? count : ""}
-                </div>
+                {count > 0 && (
+                  <div
+                    className="flex h-full items-center justify-end rounded bg-accent pr-1.5 text-[10px] font-bold text-night"
+                    style={{ width: `${Math.max(12, (count / maxBar) * 100)}%` }}
+                  >
+                    {count}
+                  </div>
+                )}
               </div>
             </div>
           ))}

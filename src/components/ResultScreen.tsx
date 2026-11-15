@@ -50,7 +50,11 @@ export function ResultScreen({
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
     } catch {
-      window.prompt("Zum Kopieren markieren:", shareText);
+      try {
+        window.prompt("Zum Kopieren markieren:", shareText);
+      } catch {
+        // Umgebung ohne Zwischenablage und prompt(): Der Share-Text steht sichtbar im Screen.
+      }
     }
   }
 
