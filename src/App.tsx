@@ -74,7 +74,7 @@ function Game({ puzzle, today }: { puzzle: Puzzle; today: string }) {
       </div>
 
       {state.phase === "start" && (
-        <StartScreen puzzle={puzzle} stats={stats} onStart={() => send({ type: "START" })} />
+        <StartScreen puzzle={puzzle} onStart={() => send({ type: "START" })} />
       )}
       {state.phase === "guessing" && (
         <GuessScreen
