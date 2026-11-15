@@ -1650,7 +1650,7 @@ function Game({ puzzle, today }: { puzzle: Puzzle; today: string }) {
 import type { Puzzle, Stats } from "../types";
 import { HostBubble } from "./HostBubble";
 
-export function StartScreen({ puzzle, stats, onStart }: { puzzle: Puzzle; stats: Stats; onStart: () => void }) {
+export function StartScreen({ puzzle, onStart }: { puzzle: Puzzle; stats?: Stats; onStart: () => void }) {
   return (
     <div className="flex flex-col gap-6 pt-6">
       <div className="text-center">
