@@ -2167,6 +2167,8 @@ git add src/ .claude/launch.json
 git commit -m "feat: add themed UI with all game screens"
 ```
 
+**Härtung (aus UI-Review, als Folge-Commit):** `effectiveStreak(stats, today)` in `stats.ts` (+2 Tests) — die Streak-Anzeige fällt auf 0, sobald der letzte Spieltag weder heute noch gestern ist; Autocomplete rankt exakte Treffer vor Präfix- vor Substring-Treffern und bekommt `max-h`/Scroll + `autoComplete="off"`; Footer nutzt `env(safe-area-inset-bottom)` und der Viewport `viewport-fit=cover`; QuizScreen zählt über `puzzle.quiz.length`; StatsModal bekommt `role="dialog"`, Escape-Handler und memoisierten Storage-Check; HostBubble bricht lange Wörter um.
+
 ---
 
 ### Task 17: Manuelle End-to-End-Verifikation
