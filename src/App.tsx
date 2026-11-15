@@ -13,6 +13,7 @@ import { RevealScreen } from "./components/RevealScreen";
 import { QuizScreen } from "./components/QuizScreen";
 import { ResultScreen } from "./components/ResultScreen";
 import { StatsModal } from "./components/StatsModal";
+import { BoardHeader } from "./components/BoardHeader";
 import puzzlesJson from "./data/puzzles.json";
 import citiesJson from "./data/cities.json";
 
@@ -58,17 +59,19 @@ function Game({ puzzle, today }: { puzzle: Puzzle; today: string }) {
 
   const send = (action: GameAction) => dispatch(action);
 
+  const revealed =
+    state.phase === "reveal" || state.phase === "quiz" || state.phase === "result";
+
   return (
     <Shell>
-      <header className="mb-5 flex items-center justify-between">
-        <h1 className="text-lg font-bold">🌍 Daily City Quiz</h1>
-        <div className="flex items-center gap-3 text-sm">
-          <span title="Streak">🔥 {effectiveStreak(stats, today)}</span>
-          <button type="button" aria-label="Statistik" onClick={() => setShowStats(true)}>
-            📊
-          </button>
-        </div>
-      </header>
+      <div className="mb-4">
+        <BoardHeader
+          puzzle={puzzle}
+          streak={effectiveStreak(stats, today)}
+          revealed={revealed}
+          onShowStats={() => setShowStats(true)}
+        />
+      </div>
 
       {state.phase === "start" && (
         <StartScreen puzzle={puzzle} stats={stats} onStart={() => send({ type: "START" })} />
