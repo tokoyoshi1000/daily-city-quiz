@@ -5,9 +5,9 @@ export function EmptyScreen() {
   return (
     <div className="flex flex-col gap-6 pt-14">
       <div className="rounded-xl border border-edge bg-board p-4">
-        <div className="font-mono text-[11px] uppercase tracking-[0.12em] text-amber">
+        <h1 className="font-mono text-[11px] uppercase tracking-[0.12em] text-amber">
           Daily City Quiz
-        </div>
+        </h1>
         <div className="mt-3">
           <span className="sr-only">Keine Abfahrt</span>
           <FlapRow text="Keine Abfahrt" />

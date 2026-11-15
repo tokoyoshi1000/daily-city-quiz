@@ -16,7 +16,6 @@
   --font-display: "Oswald Variable", Oswald, sans-serif;
   --font-sans: "B612", system-ui, sans-serif;
   --font-mono: "B612 Mono", ui-monospace, monospace;
-
 }
 
 body {
@@ -62,7 +61,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 .animate-row-in { animation: row-in 0.3s ease-out; }
-
 
 /* Aktuelle Metro-Station */
 @keyframes station-pulse {

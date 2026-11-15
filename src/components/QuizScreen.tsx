@@ -18,11 +18,9 @@ export function QuizScreen({
   const question = puzzle.quiz[state.quizIndex];
   const answered = state.quizAnswers.length > state.quizIndex;
   const [remaining, setRemaining] = useState(QUESTION_MS);
+  // chosen wird nicht gespeichert: Nach einem Reload ist nur die richtige
+  // Antwort markiert (bewusste Einschränkung, siehe Plan Task 10).
   const [chosen, setChosen] = useState<number | null>(null);
-
-  useEffect(() => {
-    setChosen(null);
-  }, [state.quizIndex]);
 
   useEffect(() => {
     if (answered) return;
