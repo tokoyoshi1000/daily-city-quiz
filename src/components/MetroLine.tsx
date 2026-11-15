@@ -16,7 +16,7 @@ export function MetroLine({ total, filled }: { total: number; filled: number }) 
             <span
               key={i}
               className={`h-4 w-4 rounded-full border-2 ${
-                i < filled ? "border-amber bg-amber" : "border-[#5b626d] bg-bg"
+                i < filled ? "border-amber bg-amber" : "border-[#5f6671] bg-bg"
               } ${i === filled - 1 ? "station-now" : ""}`}
             />
           ))}
