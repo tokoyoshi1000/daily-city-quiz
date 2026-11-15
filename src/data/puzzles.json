@@ -63,7 +63,7 @@
         "intro": "Ah, heute wird's hügelig! Ich habe mir in dieser Stadt einmal die Schuhsohlen durchgelaufen — und es hat sich gelohnt. Rate mit!",
         "wrongGuess": [
           "Nette Idee, aber nein — dort ist das Gebäck längst nicht so gut.",
-          "Kalt, kalt … also, die Richtung stimmt vielleicht, aber die Stadt nicht.",
+          "Nein, das ist sie leider nicht. Weiter geht's!",
           "Da war ich auch schon, aber heute sind wir woanders. Nächster Hinweis!",
           "Fast charmant geraten. Fast.",
           "Nein — aber ich notiere mir dein Reiseziel für später."
@@ -92,7 +92,7 @@
         "Heiße, trockene Sommer und milde, regnerische Winter: Diese Stadt liegt gut 20 Kilometer landeinwärts an einem Fluss, der sich in Schleifen durch ihr Zentrum windet.",
         "Pasta mit Ei, Pecorino, knusprigem Guanciale und schwarzem Pfeffer ist hier ein Heiligtum — wer Sahne in die Carbonara gibt, erntet böse Blicke.",
         "Der Legende nach gründeten zwei von einer Wölfin gesäugte Zwillinge die Stadt — als traditionelles Gründungsjahr gilt 753 v. Chr.",
-        "Rund 2,8 Millionen Menschen leben hier — und Besucher werfen jeden Tag geschätzt rund 3.000 Euro in einen einzigen Brunnen; das Geld geht an die Caritas.",
+        "Rund 2,8 Millionen Menschen leben hier — und Besucher werfen jeden Tag geschätzt mehr als 3.000 Euro in einen einzigen Brunnen; das Geld geht an die Caritas.",
         "Federico Fellini setzte der Stadt 1960 mit 'La Dolce Vita' ein Denkmal — Anita Ekbergs nächtliches Bad in einem Barockbrunnen ist Filmgeschichte.",
         "Das Kolosseum, einst Arena für Zehntausende Zuschauer, und der Petersdom mit seiner gewaltigen Kuppel sind die Wahrzeichen der Ewigen Stadt."
       ],
@@ -141,7 +141,7 @@
           "Nein, da muss ich dich enttäuschen. Weiter geht's!",
           "Interessant gedacht, aber wir sind ganz woanders unterwegs.",
           "Da habe ich auch schon Postkarten geschrieben — heute aber nicht.",
-          "Knapp daneben ist auch daneben. Nächster Hinweis!"
+          "Leider nein. Nächster Hinweis!"
         ],
         "winEarly": "Schon erkannt?! Du bist ja ein echter Kenner der Antike. Chapeau!",
         "winMid": "Bravo! Spätestens bei der Wölfin war die Sache klar, oder?",
@@ -212,7 +212,7 @@
         "intro": "Heute wird's quirlig! Ich habe in dieser Stadt einmal versucht, den Überblick zu behalten — vergeblich, aber herrlich. Los geht's!",
         "wrongGuess": [
           "Ehrenwerter Versuch, aber nein.",
-          "Da liegst du daneben — die Spur ist aber nicht schlecht.",
+          "Da liegst du daneben — aber nur Mut, weiter geht's.",
           "Nicht ganz! Lass dich vom nächsten Hinweis leiten.",
           "Schöne Stadt, aber heute nicht unser Ziel.",
           "Nein — aber merk dir die Idee, vielleicht passt sie ein andermal."
@@ -287,7 +287,7 @@
           "Daneben! Aber ich mag deinen Mut.",
           "Gute Idee, falsche Stadt. Nächster Hinweis!",
           "Nein, da muss ich dich weiterradeln lassen.",
-          "Fast hätte ich ja gesagt — aber eben nur fast."
+          "Leider nein — aber probier's gleich nochmal."
         ],
         "winEarly": "Direkt gelöst! Du bist offenbar schon mal über Kopfsteinpflaster an Kanälen gestolpert. Respekt!",
         "winMid": "Gut kombiniert! Die Handelskompanie hat dich verraten, oder?",
@@ -433,7 +433,7 @@
       "host": {
         "intro": "Heute wird's laut, schnell und hoch hinaus! Ich habe in dieser Stadt mal eine Woche lang kaum geschlafen — absichtlich. Rate mit!",
         "wrongGuess": [
-          "Nein, aber du denkst in die richtige Größenordnung … oder auch nicht.",
+          "Nein — aber das war ein Versuch mit Format.",
           "Daneben! Der nächste Hinweis bringt Licht ins Dunkel.",
           "Gute Stadt, aber nicht unsere heutige.",
           "Leider nein — ich bleibe hartnäckig geheimnisvoll.",
@@ -535,7 +535,7 @@
       },
       "hints": [
         "Heiße, trockene Sommer und milde, sonnige Winter: Diese Stadt liegt in einer weiten Ebene am Fuß eines Hochgebirges, dessen Gipfel im Winter verschneit sind.",
-        "Im kegelförmigen Lehmtopf geschmorte Gerichte sind hier Alltag — und für eine Spezialität im Tonkrug lassen Männer ihr Fleisch traditionell in der Glut eines Badehauses garen.",
+        "Im kegelförmigen Tontopf geschmorte Gerichte sind hier Alltag — und für eine Spezialität im Tonkrug lassen Männer ihr Fleisch traditionell in der Glut eines Badehauses garen.",
         "Die Stadt gab ihrem ganzen Land den Namen — und weil ihre Mauern in warmem Rot leuchten, nennt man sie auch 'die Rote Stadt'.",
         "Rund 1 Million Einwohner — die Altstadt ist von rund 19 Kilometer langen Lehmmauern umgeben und seit 1985 UNESCO-Welterbe.",
         "Modeschöpfer Yves Saint Laurent verliebte sich in die Stadt — in seinem Garten wurde seine Asche verstreut, und ein Museum trägt seinen Namen.",
@@ -582,7 +582,7 @@
       "host": {
         "intro": "Heute riecht es nach Gewürzen und Abenteuer! Ich habe in dieser Stadt einmal drei Stunden um einen Teppich gefeilscht — und ihn dann doch nicht gekauft. Rate mit!",
         "wrongGuess": [
-          "Nein — aber die Richtung ist ein guter Anfang … vielleicht.",
+          "Nein — aber jeder Fehlversuch bringt dich weiter.",
           "Leider daneben. Der nächste Hinweis duftet schon!",
           "Interessant, aber nicht unser Ziel heute.",
           "Nicht ganz! Bleib dran, Weltenbummler.",
@@ -901,12 +901,12 @@
         "lng": 14.5058
       },
       "hints": [
-        "Diese kleine Hauptstadt liegt in einem Becken zwischen Alpen und Karst — im Winter hält sich hier oft zäher Nebel.",
+        "Diese kleine Hauptstadt liegt in einem Becken zwischen Gebirge und Hochebene — im Winter hält sich hier oft zäher Nebel.",
         "Eine geräucherte Schweinswurst aus der historischen Region Krain ist hier fast ein Nationalsymbol — dazu gibt es Potica, einen gerollten Nusskuchen.",
         "Ein Drache ist das Symbol der Stadt — der Sage nach soll der griechische Held Jason mit den Argonauten hier ein Ungeheuer besiegt haben.",
         "Rund 290.000 Einwohner — 2016 wurde sie 'Grüne Hauptstadt Europas', und ihre Innenstadt ist weitgehend autofrei.",
         "Architekt Jože Plečnik prägte das Stadtbild in der ersten Hälfte des 20. Jahrhunderts — seine Bauten hier sind seit 2021 UNESCO-Welterbe.",
-        "Die Drachenbrücke, die Burg auf dem Hügel und die berühmte Dreifachbrücke über die Ljubljanica."
+        "Die Drachenbrücke, die Burg auf dem Hügel und die berühmte Dreifachbrücke über den Fluss."
       ],
       "quiz": [
         {
@@ -949,7 +949,7 @@
       "host": {
         "intro": "Heute wird's ein kleines Juwel — eine Stadt, die viele übersehen. Ich nicht! Ich habe dort einmal den schönsten Abend meines Reisejahres verbracht. Rate mit!",
         "wrongGuess": [
-          "Nein — gesucht ist etwas Kleineres, Feineres. Vielleicht.",
+          "Nein — aber lass dich nicht entmutigen.",
           "Leider daneben. Keine Sorge, die ist knifflig!",
           "Gute Idee, aber nein.",
           "Nicht ganz! Der nächste Hinweis bringt mehr Licht.",
@@ -1173,7 +1173,7 @@
           "Leider daneben! Der nächste Hinweis wartet schon.",
           "Nicht ganz — wir radeln weiter.",
           "Falsch, aber mit Charme geraten.",
-          "Nein — doch du bist auf dem richtigen Weg. Oder auch nicht!"
+          "Nein — aber gib nicht auf!"
         ],
         "winEarly": "Sofort erkannt?! Du hast eindeutig nordisches Feingefühl. Respekt!",
         "winMid": "Schön kombiniert! Der alte Vergnügungspark hat dich verraten, oder?",
@@ -1204,16 +1204,16 @@
       ],
       "quiz": [
         {
-          "question": "Nach welcher Stadt in Spanien wurde sie benannt?",
+          "question": "Wie heißt das bunte Viertel direkt vor der Altstadtmauer, berühmt für Straßenkunst und Nachtleben?",
           "choices": [
-            "Sevilla",
-            "Cartagena",
-            "Cádiz",
-            "Valencia"
+            "La Boca",
+            "Getsemaní",
+            "Barranco",
+            "Pelourinho"
           ],
           "answerIndex": 1,
-          "hostCorrect": "Nach Cartagena in Spanien, richtig — die Kolonialherren nahmen ihre Heimat gern mit.",
-          "hostWrong": "Nach Cartagena in Spanien — die südamerikanische Namensvetterin ist heute aber die berühmtere."
+          "hostCorrect": "Getsemaní! Früher ein Arbeiterviertel, heute voller Wandbilder und Salsa-Bars.",
+          "hostWrong": "Es ist Getsemaní — La Boca liegt in Buenos Aires, Barranco in Lima, Pelourinho in Salvador."
         },
         {
           "question": "Wie nennt man die bunt gekleideten Obstverkäuferinnen mit Schüsseln auf dem Kopf?",
@@ -1391,7 +1391,7 @@
         "wrongGuess": [
           "Nein — da müssen wir noch ein paar Breitengrade weiter.",
           "Leider daneben! Der nächste Hinweis bringt frischen Wind.",
-          "Nicht ganz, aber du bist auf Kurs. Irgendwie.",
+          "Nicht ganz — aber wir haben ja noch Hinweise.",
           "Falsch — aber ich mag deine Abenteuerlust.",
           "Nein — wir segeln weiter um die Welt."
         ],
@@ -1535,7 +1535,7 @@
       "host": {
         "intro": "Heute wird's mittelalterlich und ein bisschen nordisch-geheimnisvoll. Ich habe in dieser Stadt einmal einen Abend in einer Taverne bei Kerzenlicht verbracht — wie vor 500 Jahren. Rate mit!",
         "wrongGuess": [
-          "Nein — aber du bist auf einer spannenden Spur. Vielleicht.",
+          "Nein — aber lass dich nicht beirren.",
           "Leider daneben! Die ist auch wirklich knifflig.",
           "Nicht ganz! Der nächste Hinweis bringt mehr Licht ins Dunkel.",
           "Falsch — aber ein ehrenwerter Versuch.",
@@ -2027,7 +2027,7 @@
           ],
           "answerIndex": 2,
           "hostCorrect": "Die Madonna! Das einzige Werk Michelangelos, das zu seinen Lebzeiten Italien verließ.",
-          "hostWrong": "Es ist eine Madonna mit Kind — David steht in Florenz, Moses und die Pietà in Rom."
+          "hostWrong": "Es ist eine Madonna mit Kind — David steht in Florenz, Moses in Rom, die Pietà im Petersdom."
         },
         {
           "question": "Welche filigrane Handarbeit hat in der Stadt eine lange Tradition?",
@@ -2049,7 +2049,7 @@
           "Leider daneben! Der nächste Hinweis ist ein Leckerbissen.",
           "Nicht ganz — wir suchen weiter.",
           "Falsch, aber mit Feingefühl geraten.",
-          "Nein — doch du bist auf der richtigen Fährte. Vielleicht!"
+          "Nein — gib nicht auf, der nächste Hinweis hilft."
         ],
         "winEarly": "So früh?! Du kennst Europas Schatzkästchen offenbar alle. Respekt!",
         "winMid": "Stark! Die Bier-Pipeline hat dich verraten, oder?",
@@ -2119,7 +2119,7 @@
       "host": {
         "intro": "Heute geht's zurück an die Wiege der Zivilisation — zumindest an eine davon. Ich habe hier einmal einen Sonnenaufgang erlebt, der älter wirkte als die Zeit selbst. Rate mit!",
         "wrongGuess": [
-          "Nein — aber du gräbst in die richtige Richtung. Vielleicht.",
+          "Nein — aber grab ruhig weiter.",
           "Leider daneben! Der nächste Hinweis liegt schon im Sand.",
           "Nicht ganz — wir suchen weiter.",
           "Falsch, aber mit Forschergeist geraten.",
@@ -2265,7 +2265,7 @@
       "host": {
         "intro": "Heute geht's in eine Stadt mit zwei Seelen und einer großen Portion Europa. Ich habe hier einmal drei Weihnachtsmärkte an einem Abend geschafft — Rekord! Rate mit!",
         "wrongGuess": [
-          "Nein — aber die Richtung stimmt vielleicht schon halb.",
+          "Nein — aber der nächste Hinweis wartet schon.",
           "Leider daneben! Hol dir den nächsten Hinweis.",
           "Nicht ganz — diese Stadt ist schwerer zu fassen, als man denkt.",
           "Falsch, aber charmant geraten.",
@@ -2365,7 +2365,7 @@
       "hints": [
         "Im Winter oft knackig kalt, im Sommer angenehm warm: Diese Großstadt wird von einem kleinen Fluss mitten durch die Altstadt geteilt.",
         "Fingerlange Bratwürstchen, gleich zu dritt im Brötchen serviert — und Lebkuchen nach jahrhundertealter Tradition.",
-        "Im Mittelalter wurden hier lange die Reichskleinodien verwahrt — und 1835 startete von hier die erste Eisenbahn des Landes in die Nachbarstadt.",
+        "Ab 1424 wurden hier fast vier Jahrhunderte lang die Reichskleinodien verwahrt — und 1835 startete von hier die erste Eisenbahn des Landes in die Nachbarstadt.",
         "Rund 530.000 Einwohner — die zweitgrößte Stadt ihres Bundeslandes, mit einer großteils erhaltenen, mehrere Kilometer langen Stadtmauer.",
         "Der Maler Albrecht Dürer wurde hier 1471 geboren — sein Wohnhaus am Burgberg ist heute ein Museum.",
         "Die Kaiserburg hoch über der Altstadt, der Schöne Brunnen am Hauptmarkt und der Christkindlesmarkt mit seinem Christkind."
@@ -2813,16 +2813,16 @@
       ],
       "quiz": [
         {
-          "question": "Welches Klimaschutzabkommen wurde hier 1997 beschlossen?",
+          "question": "Wie heißt der Spazierweg am Kanal, benannt nach einem Philosophen, der dort täglich nachdachte?",
           "choices": [
-            "Das Pariser Abkommen",
-            "Das Montreal-Protokoll",
-            "Die Rio-Erklärung",
-            "Das Kyoto-Protokoll"
+            "Nakasendō",
+            "Tōkaidō",
+            "Kumano Kodō",
+            "Philosophenweg"
           ],
           "answerIndex": 3,
-          "hostCorrect": "Das Kyoto-Protokoll! Der Stadtname ging damit um die Welt.",
-          "hostWrong": "Es war das Kyoto-Protokoll — das Pariser Abkommen folgte erst 2015."
+          "hostCorrect": "Der Philosophenweg! Im Frühling blühen dort Hunderte Kirschbäume — Nachdenken wird da schwer.",
+          "hostWrong": "Es ist der Philosophenweg, benannt nach Nishida Kitarō — die anderen sind historische Fernwege."
         },
         {
           "question": "Wie nennt man hier die Geisha-Lehrlinge?",
@@ -3171,7 +3171,7 @@
         "1886 gegründet und im selben Jahr fast vollständig niedergebrannt — 1971 entstand hier eine heute weltbekannte Umweltorganisation.",
         "Rund 660.000 Einwohner in der Stadt, rund 2,6 Millionen im Großraum — 2010 Gastgeberin Olympischer Winterspiele.",
         "Der Schauspieler Ryan Reynolds wurde hier 1976 geboren.",
-        "Der riesige Stanley Park mit seinen Totempfählen, die Capilano-Hängebrücke und das Viertel Gastown mit seiner Dampfuhr."
+        "Der riesige Stanley Park mit seinen Totempfählen, die Capilano-Hängebrücke nahe der Stadt und das Viertel Gastown mit seiner Dampfuhr."
       ],
       "quiz": [
         {
@@ -3976,7 +3976,7 @@
         "Die Stadt wurde erst 1886 gegründet — ihr Name bedeutet 'neue Blume'. Das Land war, bis auf eine kurze Besatzung, nie eine Kolonie.",
         "Mehrere Millionen Einwohner, auf rund 2.350 Metern Höhe — eine der höchstgelegenen Hauptstädte der Welt und Sitz der Afrikanischen Union.",
         "Kaiser Haile Selassie regierte von hier aus bis 1974 — die Rastafari-Bewegung in Jamaika verehrt ihn als Messias.",
-        "Das Nationalmuseum mit den Knochen der Vormenschen-Frau 'Lucy', die Dreifaltigkeitskathedrale und der Merkato, einer der größten Freiluftmärkte Afrikas."
+        "Das Nationalmuseum mit dem Skelett der Vormenschen-Frau 'Lucy', die Dreifaltigkeitskathedrale und der Merkato, einer der größten Freiluftmärkte Afrikas."
       ],
       "quiz": [
         {
@@ -4122,7 +4122,7 @@
         "Seit über 2.500 Jahren eine Drehscheibe der Handelswege — im 14. Jahrhundert machte ein gefürchteter Eroberer sie zu seiner prachtvollen Hauptstadt.",
         "Rund eine halbe Million Einwohner — seit 2001 als 'Schnittpunkt der Kulturen' UNESCO-Welterbe.",
         "Der Astronom Ulugh Beg, Enkel des großen Eroberers, ließ hier im 15. Jahrhundert eine riesige Sternwarte errichten.",
-        "Der Registan-Platz mit drei prachtvollen Medresen, das Mausoleum Gur-Emir mit Timurs Grab und die Gräberstraße Shah-i-Zinda."
+        "Der Registan-Platz mit drei prachtvollen Medresen, das Mausoleum Gur-Emir mit seiner gerippten Kuppel und die Gräberstraße Shah-i-Zinda."
       ],
       "quiz": [
         {
@@ -4266,7 +4266,7 @@
         "Anfang des 20. Jahrhunderts entstand hier ein berüchtigtes Gefängnis — die Häftlinge mussten eine Schmalspurbahn bauen, die heute Touristen befördert.",
         "Rund 80.000 Einwohner — sie gilt als südlichste Stadt der Welt, nur rund 1.000 Kilometer von der Antarktis entfernt.",
         "Der Kanal vor der Stadt ist nach dem Schiff benannt, mit dem Charles Darwin auf seiner berühmten Weltreise hier vorbeisegelte.",
-        "Der rot-weiß gestreifte Leuchtturm Les Éclaireurs, der Nationalpark Tierra del Fuego und das Schild 'Fin del Mundo' am Hafen."
+        "Der rot-weiß gestreifte Leuchtturm Les Éclaireurs, der Nationalpark, in dem die Fernstraße Ruta 3 endet, und das Schild 'Fin del Mundo' am Hafen."
       ],
       "quiz": [
         {
@@ -4279,7 +4279,7 @@
           ],
           "answerIndex": 3,
           "hostCorrect": "Feuerland! Benannt nach den Feuern der Ureinwohner, die Magellan von See aus sah.",
-          "hostWrong": "Es ist Feuerland — die Insel teilt sich das Land mit Chile."
+          "hostWrong": "Es ist Feuerland — Argentinien teilt sich die Insel mit Chile."
         },
         {
           "question": "Wofür ist der Hafen ein wichtiger Ausgangspunkt?",
@@ -4383,7 +4383,7 @@
       "host": {
         "intro": "Heute wird's steil, nostalgisch und ein bisschen süß im Glas! Ich habe in dieser Stadt einmal eine Weinprobe gemacht und danach die Brücke zweimal überquert — einmal davon versehentlich. Rate mit!",
         "wrongGuess": [
-          "Nein — aber du bist auf einem guten Weg bergauf.",
+          "Nein — aber nicht aufgeben, wir gehen weiter bergauf.",
           "Leider daneben! Der nächste Hinweis ist gut gereift.",
           "Nicht ganz — nimm noch einen Schluck Mut.",
           "Falsch, aber mit Charme geraten.",
@@ -4529,13 +4529,13 @@
       "host": {
         "intro": "Heute wird's heiß, feucht und blitzsauber! Ich bin hier einmal mit einem Schokoriegel in der Hand durch die Stadt gelaufen und hatte das Gefühl, jeder Mülleimer beobachtet mich. Rate mit!",
         "wrongGuess": [
-          "Nein — aber du schwitzt schon in die richtige Richtung.",
+          "Nein — aber nicht ins Schwitzen kommen, weiter geht's.",
           "Leider daneben! Weiter geht's.",
           "Nicht ganz — nimm noch einen Schluck Wasser.",
           "Falsch, aber charmant geraten.",
           "Nein — der nächste Hinweis wird heller."
         ],
-        "winEarly": "Sofort erkannt?! Du hast bestimmt schon mal unter den Supertrees gestanden.",
+        "winEarly": "Sofort erkannt?! Du bist offenbar weit gereist.",
         "winMid": "Stark! Das Kaugummiverbot verrät einfach alles, oder?",
         "winLate": "Geschafft! Ein Schiff auf drei Hochhäusern ist eben schwer zu übersehen.",
         "lose": "Heute nicht — aber die Stadt ist so effizient, dass sie dir morgen bestimmt eine neue Chance einplant.",
@@ -4553,7 +4553,7 @@
         "lng": 5.3221
       },
       "hints": [
-        "Eine der regenreichsten Städte Europas: An deutlich über 200 Tagen im Jahr fällt hier Niederschlag — die Stadt liegt eingezwängt zwischen Hügeln und dem Meer.",
+        "Sehr regenreich: An deutlich über 200 Tagen im Jahr fällt hier Niederschlag — die Stadt liegt eingezwängt zwischen Hügeln und dem Meer.",
         "Am Hafen lockt ein Fischmarkt mit Lachs, Königskrabben und sogar Walfleisch — und getrockneter Kabeljau machte die Stadt einst reich.",
         "Ab dem 14. Jahrhundert unterhielt die Hanse hier eines ihrer vier großen Kontore — deutsche Kaufleute kontrollierten den Handel mit Stockfisch.",
         "Rund 290.000 Einwohner — die zweitgrößte Stadt ihres Landes. Bis in die 1830er-Jahre war sie sogar die größte.",
@@ -4601,13 +4601,13 @@
       "host": {
         "intro": "Heute brauchst du einen Regenschirm und gute Nerven! Ich war hier drei Tage lang, und die Einheimischen haben mir versichert, dass es normalerweise viel mehr regnet. Rate mit!",
         "wrongGuess": [
-          "Nein — aber das war nicht ins Wasser gefallen.",
+          "Nein — aber guter Versuch. Bleib trocken und rate weiter.",
           "Leider daneben! Zieh die Kapuze fester.",
           "Nicht ganz — der nächste Hinweis spült dich weiter.",
           "Falsch, aber tapfer geraten.",
-          "Nein — wir segeln weiter nordwärts im Text."
+          "Nein — der nächste Hinweis wartet schon."
         ],
-        "winEarly": "Sofort?! Respekt — du hast den Regen schon im ersten Satz gerochen.",
+        "winEarly": "Sofort?! Respekt — du hast echtes Fingerspitzengefühl.",
         "winMid": "Stark! Die Hanse hat dich auf die Spur gebracht, oder?",
         "winLate": "Geschafft! Die bunten Holzhäuser am Hafen sind eben unverkennbar.",
         "lose": "Heute nicht — aber keine Sorge, hier regnet's morgen auch wieder. Neue Chance!",
@@ -4675,13 +4675,13 @@
       "host": {
         "intro": "Heute wird's salzig, laut und ein bisschen rau — aber herzlich! Ich habe hier einmal versucht, über Fußball zu diskutieren, und bin drei Stunden später mit neuen Freunden und heiserer Stimme nach Hause gegangen. Rate mit!",
         "wrongGuess": [
-          "Nein — aber du segelst in eine spannende Richtung.",
+          "Nein — aber wir segeln einfach weiter.",
           "Leider daneben! Der Wind dreht gleich.",
           "Nicht ganz — tunk noch ein Stück Brot in die Suppe.",
           "Falsch, aber mit Temperament geraten.",
           "Nein — wir legen gleich wieder ab."
         ],
-        "winEarly": "Schon da?! Du hast die Fischsuppe wohl schon im Hafen gerochen.",
+        "winEarly": "Schon da?! Du bist ja ein echter Mittelmeer-Profi.",
         "winMid": "Stark! Die griechischen Gründer haben dich verraten, oder?",
         "winLate": "Geschafft! Die goldene Madonna über dem Hafen sieht man eben von überall.",
         "lose": "Heute nicht — aber diese Stadt war schon 2.600 Jahre geduldig. Morgen neue Chance!",
@@ -4971,13 +4971,13 @@
       "host": {
         "intro": "Heute duftet's nach Nelken, Salz und Abenteuer! Ich habe mich hier in der Altstadt einmal so gründlich verlaufen, dass mich ein Zehnjähriger gegen ein Eis zurück zum Hotel geführt hat. Bester Deal meines Lebens. Rate mit!",
         "wrongGuess": [
-          "Nein — aber du segelst mit dem richtigen Wind.",
+          "Nein — halte Kurs und rate weiter.",
           "Leider daneben! Biege einfach an der nächsten Gasse ab.",
           "Nicht ganz — riech mal am nächsten Hinweis.",
           "Falsch, aber abenteuerlich geraten.",
           "Nein — wir laufen noch ein paar Gassen weiter."
         ],
-        "winEarly": "Unglaublich! Du hast die Nelken schon im ersten Satz gerochen.",
+        "winEarly": "Unglaublich! Das ist ein Treffer für echte Kenner.",
         "winMid": "Stark! Der kürzeste Krieg der Welt hat dich verraten, oder?",
         "winLate": "Geschafft! Freddie Mercury hilft eben immer.",
         "lose": "Heute nicht — aber hier sagt man 'pole pole': immer schön langsam. Morgen neue Chance!",
@@ -5144,7 +5144,7 @@
         "lng": 114.1694
       },
       "hints": [
-        "Subtropisch, mit schwülen Sommern, Monsunregen und gelegentlichen Taifunen: Diese Metropole verteilt sich über eine Halbinsel und mehr als 200 Inseln an einem großen Flussdelta.",
+        "Subtropisch, mit schwülen Sommern, Monsunregen und gelegentlichen Taifunen: Diese Metropole verteilt sich über eine Halbinsel und zahlreiche Inseln an einem großen Flussdelta.",
         "Kleine gedämpfte Teigtaschen im Bambuskorb isst man hier beim 'Yum Cha', dem Teetrinken am Vormittag — ein schlichtes Dim-Sum-Lokal galt einst als günstigstes Sterne-Restaurant der Welt.",
         "1842 musste das Kaiserreich der Qing die Insel nach dem Ersten Opiumkrieg an die Briten abtreten — erst 1997 wurde das Gebiet zurückgegeben.",
         "Rund 7,5 Millionen Einwohner auf engstem Raum — und die Stadt gilt als die mit den meisten Wolkenkratzern der Welt.",
@@ -5177,22 +5177,22 @@
           "hostWrong": "Er gilt als längste überdachte Freiluft-Rolltreppenanlage der Welt — rund 800 Meter Hang ohne Schwitzen."
         },
         {
-          "question": "Wie heißen die Fähren, die seit dem 19. Jahrhundert über den Victoria Harbour pendeln?",
+          "question": "Welcher Flughafen wurde 1998 geschlossen — berühmt für seinen spektakulären Landeanflug knapp über den Hochhausdächern?",
           "choices": [
-            "Dragon Line",
-            "Moon Boats",
-            "Harbour Queens",
-            "Star Ferry"
+            "Changi",
+            "Haneda",
+            "Suvarnabhumi",
+            "Kai Tak"
           ],
           "answerIndex": 3,
-          "hostCorrect": "Star Ferry! Eine der günstigsten Hafenrundfahrten der Welt.",
-          "hostWrong": "Es ist die Star Ferry — jedes Schiff trägt einen Sternennamen wie 'Morning Star'."
+          "hostCorrect": "Kai Tak! Piloten mussten im Anflug eine scharfe Kurve fliegen — die Anwohner konnten fast ins Cockpit winken.",
+          "hostWrong": "Es war Kai Tak — 1998 vom neuen Flughafen auf der Insel Chek Lap Kok abgelöst."
         }
       ],
       "host": {
         "intro": "Heute wird's eng, hoch und neonbunt! Ich habe hier einmal versucht, in einer Garküche ohne Hilfe zu bestellen. Ich bekam etwas völlig anderes als gedacht — und es war fantastisch. Rate mit!",
         "wrongGuess": [
-          "Nein — aber du fährst schon die richtige Rolltreppe hoch.",
+          "Nein — nimm die nächste Rolltreppe und versuch's nochmal.",
           "Leider daneben! Nimm die nächste Fähre.",
           "Nicht ganz — noch ein Dim Sum, dann klappt's.",
           "Falsch, aber mit Schwung geraten.",
@@ -5336,7 +5336,7 @@
       "host": {
         "intro": "Heute wird's neblig, steil und ein bisschen hippiebunt! Ich habe hier im Juli gefroren wie im Februar — und mir an einer Ecke ein Sweatshirt mit einer Brücke drauf gekauft. Wie alle Touristen. Rate mit!",
         "wrongGuess": [
-          "Nein — aber du fährst schon den richtigen Hügel hoch.",
+          "Nein — aber halt dich fest, es geht weiter.",
           "Leider daneben! Der Nebel lichtet sich gleich.",
           "Nicht ganz — halt dich gut fest, es geht steil weiter.",
           "Falsch, aber mit Flower Power geraten.",
@@ -5414,7 +5414,7 @@
           "Falsch, aber mit Flamenco im Herzen.",
           "Nein — der nächste Hinweis klatscht schon im Takt."
         ],
-        "winEarly": "Olé! So früh? Du hast die Tapas wohl schon gerochen.",
+        "winEarly": "Olé! So früh? Das war ein Volltreffer.",
         "winMid": "Stark! Das Jahr 1492 hat dich auf die Spur gebracht, oder?",
         "winLate": "Geschafft! Die Alhambra ist eben unvergleichlich.",
         "lose": "Heute nicht — aber der letzte Emir hat beim Abschied auch geseufzt. Morgen neue Chance!",
@@ -5480,7 +5480,7 @@
       "host": {
         "intro": "Heute wird's farbenfroh, heiß und königlich! Ich habe hier auf einem Basar eine Stunde lang um einen Schal gefeilscht und am Ende mehr bezahlt als der Anfangspreis. Frag nicht. Rate mit!",
         "wrongGuess": [
-          "Nein — aber du feilschst dich schon heran.",
+          "Nein — aber wir feilschen weiter.",
           "Leider daneben! Der nächste Hinweis ist farbenfroher.",
           "Nicht ganz — nimm noch einen Schluck Lassi.",
           "Falsch, aber mit königlicher Haltung.",
@@ -5560,7 +5560,7 @@
           "Falsch, aber mit nordischer Gelassenheit geraten.",
           "Nein — wir schippern weiter zwischen den Inseln."
         ],
-        "winEarly": "Sofort?! Du hast die Ostseeluft schon im ersten Satz gerochen.",
+        "winEarly": "Sofort?! Du hast offenbar einen inneren Kompass.",
         "winMid": "Stark! Der Zar hat dich auf die Spur gebracht, oder?",
         "winLate": "Geschafft! Der weiße Dom ist eben unverkennbar.",
         "lose": "Heute nicht — aber hier sagt man: Was du heute nicht schaffst, schwitzt du morgen raus. Neue Chance!",
@@ -5997,7 +5997,7 @@
           "Falsch, aber mit Swing geraten.",
           "Nein — wir fahren noch ein Stockwerk höher."
         ],
-        "winEarly": "Sofort?! Du hast die Pizza wohl schon gerochen.",
+        "winEarly": "Sofort?! Du kennst dich ja richtig aus.",
         "winMid": "Stark! Die Kuh mit der Laterne hat dich verraten, oder?",
         "winLate": "Geschafft! In der silbernen Bohne spiegelt sich eben jeder.",
         "lose": "Heute nicht — aber diese Stadt hat sich auch nach dem großen Brand wieder aufgerappelt. Morgen neue Chance!",
@@ -6162,7 +6162,7 @@
       },
       "hints": [
         "Kontinental, mit heißen Sommern: Diese Hauptstadt zieht sich durch ein Flusstal zwischen Bergrücken — nicht weit entfernt erhebt sich ein Hochgebirge, das oft als Grenze zwischen zwei Kontinenten gilt.",
-        "Ein Brotschiffchen mit geschmolzenem Käse, Butter und rohem Eigelb — und dicke Teigtaschen mit Brühe darin, die man am Teigzipfel festhält — den Zipfel lässt man traditionell übrig.",
+        "Ein Brotschiffchen mit geschmolzenem Käse, Butter und rohem Eigelb. Dazu dicke Teigtaschen mit Brühe darin, die man am Teigzipfel festhält; den Zipfel lässt man traditionell übrig.",
         "Der Name soll von warmen Quellen kommen — der Legende nach entdeckte ein König sie, als sein Jagdfalke mit einem Fasan in eine heiße Quelle stürzte.",
         "Rund 1,2 Millionen Einwohner — fast ein Drittel der gesamten Landesbevölkerung lebt hier.",
         "Josef Stalin besuchte hier als junger Mann das Priesterseminar — 1907 soll er einen spektakulären Überfall auf einen Geldtransport mitten in der Stadt mitorganisiert haben.",
@@ -6287,7 +6287,7 @@
           "Falsch, aber mit Stil geraten.",
           "Nein — wir biegen in die nächste Gasse ab."
         ],
-        "winEarly": "Sofort?! Du hast den Kaffee wohl schon gerochen.",
+        "winEarly": "Sofort?! Du bist ja ein echter Weltenbummler.",
         "winMid": "Stark! Das Pferderennen hat dich auf die Spur gebracht, oder?",
         "winLate": "Geschafft! Die Uhren am Bahnhof sind eben legendär.",
         "lose": "Heute nicht — aber hier wartet schon die nächste Jahreszeit. Morgen neue Chance!",
@@ -6381,7 +6381,7 @@
         "Ein herzhafter Pfannkuchen in Schichten — mit Kohl, Nudeln, Ei und dunkler Soße — ist die regionale Spezialität, dazu frische Austern aus der Bucht.",
         "Ein Feudalherr gründete die Stadt 1589, als er eine Burg im Mündungsdelta errichten ließ.",
         "Rund 1,2 Millionen Einwohner — und die Baseballmannschaft der Stadt, die 'Carp', gehört zu den beliebtesten des Landes.",
-        "Das Mädchen Sadako Sasaki faltete hier vor ihrem Tod 1955 Hunderte Papierkraniche — ihre Geschichte machte den Kranich zum weltweiten Friedenssymbol.",
+        "Das Mädchen Sadako Sasaki faltete hier vor ihrem Tod 1955 über tausend Papierkraniche — ihre Geschichte machte den Kranich zum weltweiten Friedenssymbol.",
         "Die Ruine der Atombombenkuppel, der Friedenspark mit Museum und vor der Küste das im Meer stehende rote Torii der Insel Itsukushima."
       ],
       "quiz": [
@@ -6431,11 +6431,11 @@
           "Falsch, aber mit Ruhe geraten.",
           "Nein — wir gehen noch ein Stück am Fluss entlang."
         ],
-        "winEarly": "Sofort?! Respekt — du hast den Pfannkuchen schon erkannt.",
+        "winEarly": "Sofort?! Respekt — das war ein Volltreffer mit Weitblick.",
         "winMid": "Stark! Die Baseball-Karpfen haben dich auf die Spur gebracht, oder?",
         "winLate": "Geschafft! Die Kranich-Geschichte kennt eben die ganze Welt.",
         "lose": "Heute nicht — aber diese Stadt steht für Neuanfänge. Morgen neue Chance!",
-        "reveal": "Hiroshima! Eine Stadt, die aus der Zerstörung eine Botschaft gemacht hat. Ich habe im Friedenspark einen Papierkranich aufgehängt, den ich vorher eine halbe Stunde lang mühsam gefaltet hatte. Er sah aus wie eine Ente. Ich glaube, das zählt trotzdem."
+        "reveal": "Hiroshima! Eine Stadt, die aus der Zerstörung eine Botschaft gemacht hat. Ich habe im Friedenspark einen Papierkranich niedergelegt, den ich vorher eine halbe Stunde lang gefaltet hatte. Schön war er nicht — aber er kam von Herzen."
       }
     },
     {
