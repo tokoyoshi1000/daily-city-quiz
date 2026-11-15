@@ -59,7 +59,7 @@ export function FlapRow({ text, intro = false }: { text: string; intro?: boolean
           <span
             key={i}
             className={`flap relative grid place-items-center rounded bg-cell font-display font-medium text-amber ${
-              small ? "h-8 w-[22px] text-base" : "h-11 w-8 text-2xl"
+              small ? "h-8 w-[22px] text-base" : "h-10 w-7 text-xl"
             } ${intro ? "flap-intro" : ""}`}
             style={intro ? { animationDelay: `${0.3 + i * 0.12}s` } : undefined}
           >
