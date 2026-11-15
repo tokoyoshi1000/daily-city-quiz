@@ -1,6 +1,23 @@
 @import "tailwindcss";
 
 @theme {
+  /* Transit-Tokens */
+  --color-bg: #131519;
+  --color-board: #0f1113;
+  --color-cell: #1a1d21;
+  --color-edge: #24282e;
+  --color-amber: #ffc83d;
+  --color-bright: #e8e9eb;
+  --color-dim: #9aa0a8;
+  --color-miss: #ff7a6b;
+  --color-hit: #4fbf78;
+  --color-paper: #f7f3e8;
+  --color-ink: #15171a;
+  --font-display: "Oswald Variable", Oswald, sans-serif;
+  --font-sans: "B612", system-ui, sans-serif;
+  --font-mono: "B612 Mono", ui-monospace, monospace;
+
+  /* Alt-Tokens — werden in Task 13 entfernt */
   --color-night: #0b1026;
   --color-night-soft: #141b3c;
   --color-card: #1d2550;
@@ -8,26 +25,102 @@
   --color-accent-soft: #ffd166;
   --color-correct: #2ec4b6;
   --color-wrong: #ef476f;
-  --color-ink: #f4f4f8;
   --color-ink-dim: #9aa3c7;
 }
 
 body {
-  background-color: var(--color-night);
-  color: var(--color-ink);
+  background-color: var(--color-bg);
+  color: var(--color-bright);
+  font-family: var(--font-sans);
 }
 
+:focus-visible {
+  outline: 2px solid var(--color-amber);
+  outline-offset: 2px;
+}
+
+/* Fallblatt-Zellen */
+.flap::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1.5px;
+  background: rgb(0 0 0 / 0.55);
+}
+@keyframes flap-intro {
+  0% { transform: rotateX(0); }
+  50% { transform: rotateX(-86deg); }
+  100% { transform: rotateX(0); }
+}
+.flap-intro {
+  transform-origin: center 55%;
+  animation: flap-intro 0.7s ease 2;
+  animation-fill-mode: both;
+}
+
+/* Zeilen-Einfahrt (neuer Hinweis) */
+@keyframes row-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-row-in { animation: row-in 0.3s ease-out; }
+
+/* Alt — wird in Task 13 entfernt */
 @keyframes card-in {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-card-in { animation: card-in 0.35s ease-out; }
+
+/* Aktuelle Metro-Station */
+@keyframes station-pulse {
+  0%, 100% { box-shadow: 0 0 0 3px rgb(255 200 61 / 0.12); }
+  50% { box-shadow: 0 0 0 6px rgb(255 200 61 / 0.26); }
+}
+.station-now {
+  /* Statischer Ring als Basis, damit die aktuelle Station auch bei reduced-motion erkennbar bleibt */
+  box-shadow: 0 0 0 4px rgb(255 200 61 / 0.18);
+  animation: station-pulse 2.4s ease-in-out infinite;
 }
 
-.animate-card-in {
-  animation: card-in 0.35s ease-out;
+/* Quiz-Timer unter 3 s */
+@keyframes timer-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.45; }
+}
+.animate-timer-pulse { animation: timer-pulse 0.7s ease-in-out infinite; }
+
+/* Stempel auf der Bordkarte */
+@keyframes stamp-in {
+  from { transform: rotate(-8deg) scale(1.7); opacity: 0; }
+  to { transform: rotate(-8deg) scale(1); opacity: 1; }
+}
+.stamp-in { animation: stamp-in 0.35s cubic-bezier(0.2, 1.4, 0.4, 1) 0.25s both; }
+
+/* Ticket-Kerben */
+.ticket::before,
+.ticket::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--color-bg);
+  transform: translateY(-50%);
+}
+.ticket::before { left: -8px; }
+.ticket::after { right: -8px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .flap-intro,
+  .animate-row-in,
+  .animate-card-in,
+  .station-now,
+  .animate-timer-pulse,
+  .stamp-in {
+    animation: none;
+  }
 }
