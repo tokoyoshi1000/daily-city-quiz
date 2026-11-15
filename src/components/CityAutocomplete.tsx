@@ -29,7 +29,7 @@ export function CityAutocomplete({ cities, onGuess }: { cities: City[]; onGuess:
   return (
     <div className="relative">
       <form
-        className="flex gap-2"
+        className="mt-1 flex items-end gap-3"
         onSubmit={(e) => {
           e.preventDefault();
           if (!selected && suggestions.length > 0) {
@@ -42,7 +42,7 @@ export function CityAutocomplete({ cities, onGuess }: { cities: City[]; onGuess:
         }}
       >
         <input
-          className="min-w-0 flex-1 rounded-xl border border-card bg-night-soft px-4 py-3 outline-none focus:border-accent"
+          className="min-w-0 flex-1 border-0 border-b-2 border-ink/70 bg-transparent px-0.5 py-1.5 text-base text-ink outline-none placeholder:text-[#a39a85] focus:border-ink"
           aria-label="Stadt eingeben"
           autoComplete="off"
           autoCapitalize="off"
@@ -57,21 +57,22 @@ export function CityAutocomplete({ cities, onGuess }: { cities: City[]; onGuess:
         <button
           type="submit"
           disabled={!selected}
-          className="rounded-xl bg-accent px-5 font-bold text-night disabled:opacity-40"
+          className="shrink-0 rounded-md bg-ink px-5 py-2.5 font-display text-sm font-medium uppercase tracking-wider text-amber disabled:opacity-40"
         >
           Raten
         </button>
       </form>
       {suggestions.length > 0 && (
-        <ul className="absolute bottom-full z-10 mb-2 max-h-64 w-full overflow-hidden overflow-y-auto rounded-xl border border-card bg-night-soft">
+        <ul className="absolute bottom-full z-10 mb-3 max-h-64 w-full overflow-hidden overflow-y-auto rounded-xl border border-edge bg-paper text-ink shadow-lg">
           {suggestions.map((c) => (
             <li key={`${c.name}|${c.country}`}>
               <button
                 type="button"
-                className="w-full px-4 py-2.5 text-left hover:bg-card"
+                className="w-full px-4 py-2.5 text-left hover:bg-ink/10"
                 onClick={() => choose(c)}
               >
-                {c.name} <span className="text-sm text-ink-dim">· {c.country}</span>
+                {c.name}
+                <span className="font-mono text-xs text-[#6b6453]">, {c.country}</span>
               </button>
             </li>
           ))}
