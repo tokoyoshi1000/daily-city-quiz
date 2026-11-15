@@ -1,1 +1,18 @@
 @import "tailwindcss";
+
+@theme {
+  --color-night: #0b1026;
+  --color-night-soft: #141b3c;
+  --color-card: #1d2550;
+  --color-accent: #ffb703;
+  --color-accent-soft: #ffd166;
+  --color-correct: #2ec4b6;
+  --color-wrong: #ef476f;
+  --color-ink: #f4f4f8;
+  --color-ink-dim: #9aa3c7;
+}
+
+body {
+  background-color: var(--color-night);
+  color: var(--color-ink);
+}
