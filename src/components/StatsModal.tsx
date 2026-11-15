@@ -2,7 +2,7 @@ import { useEffect, useMemo } from "react";
 import type { Stats } from "../types";
 import { storageAvailable } from "../storage/storage";
 
-export function StatsModal({ stats, onClose }: { stats: Stats; onClose: () => void }) {
+export function StatsModal({ stats, streak, onClose }: { stats: Stats; streak: number; onClose: () => void }) {
   const persistenceMissing = useMemo(() => !storageAvailable(), []);
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -41,7 +41,7 @@ export function StatsModal({ stats, onClose }: { stats: Stats; onClose: () => vo
         <div className="mb-5 grid grid-cols-4 gap-2 text-center">
           <Stat label="Gespielt" value={stats.played} />
           <Stat label="Gelöst" value={`${solvedPercent}%`} />
-          <Stat label="Streak" value={stats.currentStreak} />
+          <Stat label="Streak" value={streak} />
           <Stat label="Rekord" value={stats.maxStreak} />
         </div>
         <p className="mb-2 text-xs text-ink-dim">Gelöst nach Hinweis …</p>

@@ -96,7 +96,7 @@ function Game({ puzzle, today }: { puzzle: Puzzle; today: string }) {
         <ResultScreen puzzle={puzzle} state={state} stats={stats} onShowStats={() => setShowStats(true)} />
       )}
 
-      {showStats && <StatsModal stats={stats} onClose={() => setShowStats(false)} />}
+      {showStats && <StatsModal stats={stats} streak={effectiveStreak(stats, today)} onClose={() => setShowStats(false)} />}
     </Shell>
   );
 }
