@@ -1,7 +1,16 @@
 import type { GameState, Puzzle } from "../types";
+import { actOnePoints } from "../game/scoring";
 import { HostBubble } from "./HostBubble";
 
-export function RevealScreen({ puzzle, state, onContinue }: { puzzle: Puzzle; state: GameState; onContinue: () => void }) {
+export function RevealScreen({
+  puzzle,
+  state,
+  onContinue,
+}: {
+  puzzle: Puzzle;
+  state: GameState;
+  onContinue: () => void;
+}) {
   const solved = state.solvedAtHint !== null;
   const reactionLine = !solved
     ? puzzle.host.lose
@@ -12,25 +21,39 @@ export function RevealScreen({ puzzle, state, onContinue }: { puzzle: Puzzle; st
         : puzzle.host.winLate;
 
   return (
-    <div className="flex flex-col gap-6 pt-4 text-center">
-      <div className="text-6xl">{solved ? "🎉" : "🙈"}</div>
-      <div>
-        <p className="text-sm text-ink-dim">{solved ? "Richtig — es war" : "Die gesuchte Stadt war"}</p>
-        <h2 className="mt-1 text-3xl font-extrabold text-accent">{puzzle.city.name}</h2>
-        <p className="mt-1 text-sm text-ink-dim">{puzzle.city.country}</p>
+    <div className="flex flex-col gap-4 pt-2">
+      <div className="flex items-center justify-between rounded-lg border border-edge bg-cell px-4 py-3">
+        {solved ? (
+          <>
+            <span className="rounded-sm border border-hit px-2 py-1 font-mono text-[11px] uppercase tracking-wider text-hit">
+              Angekommen
+            </span>
+            <span className="font-mono text-sm text-amber">
+              +{actOnePoints(state.solvedAtHint)} Punkte
+            </span>
+          </>
+        ) : (
+          <>
+            <span className="rounded-sm border border-miss px-2 py-1 font-mono text-[11px] uppercase tracking-wider text-miss">
+              Verpasst
+            </span>
+            <span className="font-mono text-sm text-dim">0 Punkte</span>
+          </>
+        )}
       </div>
-      <div className="text-left">
-        <HostBubble>
-          <p>{reactionLine}</p>
-          <p className="mt-2">{puzzle.host.reveal}</p>
-        </HostBubble>
-      </div>
+      <p className="px-1 text-sm text-dim">
+        {puzzle.city.name}, {puzzle.city.country}
+      </p>
+      <HostBubble>
+        <p>{reactionLine}</p>
+        <p className="mt-2">{puzzle.host.reveal}</p>
+      </HostBubble>
       <button
         type="button"
-        className="rounded-xl bg-accent py-3.5 text-lg font-bold text-night active:scale-95"
+        className="block w-full rounded-lg bg-amber py-3.5 font-display text-lg font-medium uppercase tracking-wide text-ink active:scale-95"
         onClick={onContinue}
       >
-        Weiter zum Bonus-Quiz 🧠
+        Zur Bonusrunde
       </button>
     </div>
   );
