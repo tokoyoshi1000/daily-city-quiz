@@ -36,8 +36,8 @@ describe("puzzles.json", () => {
   it("Nummern laufen lückenlos ab 1", () => {
     puzzles.forEach((p, i) => expect(p.number, p.date).toBe(i + 1));
   });
-  it("Daten starten am 2026-11-14 und sind lückenlos aufsteigend", () => {
-    expect(puzzles[0].date).toBe("2026-11-14");
+  it("Daten starten am Launch-Tag 2026-11-15 und sind lückenlos aufsteigend", () => {
+    expect(puzzles[0].date).toBe("2026-11-15");
     for (let i = 1; i < puzzles.length; i++) {
       expect(previousDateString(puzzles[i].date), `#${puzzles[i].number}`).toBe(puzzles[i - 1].date);
     }

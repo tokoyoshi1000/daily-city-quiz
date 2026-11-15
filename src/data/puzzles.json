@@ -2,7 +2,7 @@
   "puzzles": [
     {
       "number": 1,
-      "date": "2026-11-14",
+      "date": "2026-11-15",
       "city": {
         "name": "Lissabon",
         "aliases": [
@@ -77,7 +77,7 @@
     },
     {
       "number": 2,
-      "date": "2026-11-15",
+      "date": "2026-11-16",
       "city": {
         "name": "Rom",
         "aliases": [
@@ -152,7 +152,7 @@
     },
     {
       "number": 3,
-      "date": "2026-11-16",
+      "date": "2026-11-17",
       "city": {
         "name": "Tokio",
         "aliases": [
@@ -226,7 +226,7 @@
     },
     {
       "number": 4,
-      "date": "2026-11-17",
+      "date": "2026-11-18",
       "city": {
         "name": "Amsterdam",
         "aliases": [],
@@ -298,7 +298,7 @@
     },
     {
       "number": 5,
-      "date": "2026-11-18",
+      "date": "2026-11-19",
       "city": {
         "name": "Krakau",
         "aliases": [
@@ -373,7 +373,7 @@
     },
     {
       "number": 6,
-      "date": "2026-11-19",
+      "date": "2026-11-20",
       "city": {
         "name": "New York",
         "aliases": [
@@ -448,7 +448,7 @@
     },
     {
       "number": 7,
-      "date": "2026-11-20",
+      "date": "2026-11-21",
       "city": {
         "name": "Wien",
         "aliases": [
@@ -522,7 +522,7 @@
     },
     {
       "number": 8,
-      "date": "2026-11-21",
+      "date": "2026-11-22",
       "city": {
         "name": "Marrakesch",
         "aliases": [
@@ -597,7 +597,7 @@
     },
     {
       "number": 9,
-      "date": "2026-11-22",
+      "date": "2026-11-23",
       "city": {
         "name": "Edinburgh",
         "aliases": [
@@ -671,7 +671,7 @@
     },
     {
       "number": 10,
-      "date": "2026-11-23",
+      "date": "2026-11-24",
       "city": {
         "name": "Sydney",
         "aliases": [],
@@ -743,7 +743,7 @@
     },
     {
       "number": 11,
-      "date": "2026-11-24",
+      "date": "2026-11-25",
       "city": {
         "name": "Prag",
         "aliases": [
@@ -818,7 +818,7 @@
     },
     {
       "number": 12,
-      "date": "2026-11-25",
+      "date": "2026-11-26",
       "city": {
         "name": "Montreal",
         "aliases": [],
@@ -890,7 +890,7 @@
     },
     {
       "number": 13,
-      "date": "2026-11-26",
+      "date": "2026-11-27",
       "city": {
         "name": "Ljubljana",
         "aliases": [
@@ -964,7 +964,7 @@
     },
     {
       "number": 14,
-      "date": "2026-11-27",
+      "date": "2026-11-28",
       "city": {
         "name": "Barcelona",
         "aliases": [],
@@ -1036,7 +1036,7 @@
     },
     {
       "number": 15,
-      "date": "2026-11-28",
+      "date": "2026-11-29",
       "city": {
         "name": "Istanbul",
         "aliases": [],
@@ -1108,7 +1108,7 @@
     },
     {
       "number": 16,
-      "date": "2026-11-29",
+      "date": "2026-11-30",
       "city": {
         "name": "Kopenhagen",
         "aliases": [
@@ -1184,7 +1184,7 @@
     },
     {
       "number": 17,
-      "date": "2026-11-30",
+      "date": "2026-12-01",
       "city": {
         "name": "Cartagena",
         "aliases": [
@@ -1258,7 +1258,7 @@
     },
     {
       "number": 18,
-      "date": "2026-12-01",
+      "date": "2026-12-02",
       "city": {
         "name": "Budapest",
         "aliases": [],
@@ -1330,7 +1330,7 @@
     },
     {
       "number": 19,
-      "date": "2026-12-02",
+      "date": "2026-12-03",
       "city": {
         "name": "Kapstadt",
         "aliases": [
@@ -1404,7 +1404,7 @@
     },
     {
       "number": 20,
-      "date": "2026-12-03",
+      "date": "2026-12-04",
       "city": {
         "name": "Paris",
         "aliases": [],
@@ -1476,7 +1476,7 @@
     },
     {
       "number": 21,
-      "date": "2026-12-04",
+      "date": "2026-12-05",
       "city": {
         "name": "Tallinn",
         "aliases": [
@@ -1550,7 +1550,7 @@
     },
     {
       "number": 22,
-      "date": "2026-12-05",
+      "date": "2026-12-06",
       "city": {
         "name": "Buenos Aires",
         "aliases": [],
@@ -1622,7 +1622,7 @@
     },
     {
       "number": 23,
-      "date": "2026-12-06",
+      "date": "2026-12-07",
       "city": {
         "name": "Osaka",
         "aliases": [],
@@ -1694,7 +1694,7 @@
     },
     {
       "number": 24,
-      "date": "2026-12-07",
+      "date": "2026-12-08",
       "city": {
         "name": "Valencia",
         "aliases": [],
@@ -1766,7 +1766,7 @@
     },
     {
       "number": 25,
-      "date": "2026-12-08",
+      "date": "2026-12-09",
       "city": {
         "name": "Hanoi",
         "aliases": [],
@@ -1838,7 +1838,7 @@
     },
     {
       "number": 26,
-      "date": "2026-12-09",
+      "date": "2026-12-10",
       "city": {
         "name": "Dubrovnik",
         "aliases": [
@@ -1912,7 +1912,7 @@
     },
     {
       "number": 27,
-      "date": "2026-12-10",
+      "date": "2026-12-11",
       "city": {
         "name": "Rio de Janeiro",
         "aliases": [
@@ -1986,7 +1986,7 @@
     },
     {
       "number": 28,
-      "date": "2026-12-11",
+      "date": "2026-12-12",
       "city": {
         "name": "Brügge",
         "aliases": [
@@ -2060,7 +2060,7 @@
     },
     {
       "number": 29,
-      "date": "2026-12-12",
+      "date": "2026-12-13",
       "city": {
         "name": "Kairo",
         "aliases": [
@@ -2134,7 +2134,7 @@
     },
     {
       "number": 30,
-      "date": "2026-12-13",
+      "date": "2026-12-14",
       "city": {
         "name": "Valletta",
         "aliases": [],
@@ -2206,7 +2206,7 @@
     },
     {
       "number": 31,
-      "date": "2026-12-14",
+      "date": "2026-12-15",
       "city": {
         "name": "Straßburg",
         "aliases": [
@@ -2280,7 +2280,7 @@
     },
     {
       "number": 32,
-      "date": "2026-12-15",
+      "date": "2026-12-16",
       "city": {
         "name": "Seoul",
         "aliases": [],
@@ -2352,7 +2352,7 @@
     },
     {
       "number": 33,
-      "date": "2026-12-16",
+      "date": "2026-12-17",
       "city": {
         "name": "Nürnberg",
         "aliases": [
@@ -2426,7 +2426,7 @@
     },
     {
       "number": 34,
-      "date": "2026-12-17",
+      "date": "2026-12-18",
       "city": {
         "name": "Mexiko-Stadt",
         "aliases": [
@@ -2502,7 +2502,7 @@
     },
     {
       "number": 35,
-      "date": "2026-12-18",
+      "date": "2026-12-19",
       "city": {
         "name": "Tromsø",
         "aliases": [
@@ -2576,7 +2576,7 @@
     },
     {
       "number": 36,
-      "date": "2026-12-19",
+      "date": "2026-12-20",
       "city": {
         "name": "Havanna",
         "aliases": [
@@ -2651,7 +2651,7 @@
     },
     {
       "number": 37,
-      "date": "2026-12-20",
+      "date": "2026-12-21",
       "city": {
         "name": "Salzburg",
         "aliases": [],
@@ -2723,7 +2723,7 @@
     },
     {
       "number": 38,
-      "date": "2026-12-21",
+      "date": "2026-12-22",
       "city": {
         "name": "Reykjavík",
         "aliases": [],
@@ -2795,7 +2795,7 @@
     },
     {
       "number": 39,
-      "date": "2026-12-22",
+      "date": "2026-12-23",
       "city": {
         "name": "Kyoto",
         "aliases": [],
@@ -2867,7 +2867,7 @@
     },
     {
       "number": 40,
-      "date": "2026-12-23",
+      "date": "2026-12-24",
       "city": {
         "name": "Dresden",
         "aliases": [],
@@ -2939,7 +2939,7 @@
     },
     {
       "number": 41,
-      "date": "2026-12-24",
+      "date": "2026-12-25",
       "city": {
         "name": "Turku",
         "aliases": [
@@ -3013,7 +3013,7 @@
     },
     {
       "number": 42,
-      "date": "2026-12-25",
+      "date": "2026-12-26",
       "city": {
         "name": "Manila",
         "aliases": [],
@@ -3085,7 +3085,7 @@
     },
     {
       "number": 43,
-      "date": "2026-12-26",
+      "date": "2026-12-27",
       "city": {
         "name": "Hobart",
         "aliases": [],
@@ -3157,7 +3157,7 @@
     },
     {
       "number": 44,
-      "date": "2026-12-27",
+      "date": "2026-12-28",
       "city": {
         "name": "Vancouver",
         "aliases": [],
@@ -3229,7 +3229,7 @@
     },
     {
       "number": 45,
-      "date": "2026-12-28",
+      "date": "2026-12-29",
       "city": {
         "name": "Lima",
         "aliases": [],
@@ -3301,7 +3301,7 @@
     },
     {
       "number": 46,
-      "date": "2026-12-29",
+      "date": "2026-12-30",
       "city": {
         "name": "Neapel",
         "aliases": [
@@ -3376,7 +3376,7 @@
     },
     {
       "number": 47,
-      "date": "2026-12-30",
+      "date": "2026-12-31",
       "city": {
         "name": "Kathmandu",
         "aliases": [],
@@ -3448,7 +3448,7 @@
     },
     {
       "number": 48,
-      "date": "2026-12-31",
+      "date": "2027-01-01",
       "city": {
         "name": "Auckland",
         "aliases": [],
@@ -3520,7 +3520,7 @@
     },
     {
       "number": 49,
-      "date": "2027-01-01",
+      "date": "2027-01-02",
       "city": {
         "name": "Philadelphia",
         "aliases": [],
@@ -3592,7 +3592,7 @@
     },
     {
       "number": 50,
-      "date": "2027-01-02",
+      "date": "2027-01-03",
       "city": {
         "name": "Venedig",
         "aliases": [
@@ -3667,7 +3667,7 @@
     },
     {
       "number": 51,
-      "date": "2027-01-03",
+      "date": "2027-01-04",
       "city": {
         "name": "Bangkok",
         "aliases": [],
@@ -3739,7 +3739,7 @@
     },
     {
       "number": 52,
-      "date": "2027-01-04",
+      "date": "2027-01-05",
       "city": {
         "name": "Stockholm",
         "aliases": [],
@@ -3811,7 +3811,7 @@
     },
     {
       "number": 53,
-      "date": "2027-01-05",
+      "date": "2027-01-06",
       "city": {
         "name": "Québec",
         "aliases": [
@@ -3886,7 +3886,7 @@
     },
     {
       "number": 54,
-      "date": "2027-01-06",
+      "date": "2027-01-07",
       "city": {
         "name": "Köln",
         "aliases": [
@@ -3960,7 +3960,7 @@
     },
     {
       "number": 55,
-      "date": "2027-01-07",
+      "date": "2027-01-08",
       "city": {
         "name": "Addis Abeba",
         "aliases": [
@@ -4034,7 +4034,7 @@
     },
     {
       "number": 56,
-      "date": "2027-01-08",
+      "date": "2027-01-09",
       "city": {
         "name": "Sevilla",
         "aliases": [
@@ -4108,7 +4108,7 @@
     },
     {
       "number": 57,
-      "date": "2027-01-09",
+      "date": "2027-01-10",
       "city": {
         "name": "Samarkand",
         "aliases": [],
@@ -4180,7 +4180,7 @@
     },
     {
       "number": 58,
-      "date": "2027-01-10",
+      "date": "2027-01-11",
       "city": {
         "name": "Dublin",
         "aliases": [],
@@ -4252,7 +4252,7 @@
     },
     {
       "number": 59,
-      "date": "2027-01-11",
+      "date": "2027-01-12",
       "city": {
         "name": "Ushuaia",
         "aliases": [],
@@ -4324,7 +4324,7 @@
     },
     {
       "number": 60,
-      "date": "2027-01-12",
+      "date": "2027-01-13",
       "city": {
         "name": "Porto",
         "aliases": [
@@ -4398,7 +4398,7 @@
     },
     {
       "number": 61,
-      "date": "2027-01-13",
+      "date": "2027-01-14",
       "city": {
         "name": "Berlin",
         "aliases": [],
@@ -4470,7 +4470,7 @@
     },
     {
       "number": 62,
-      "date": "2027-01-14",
+      "date": "2027-01-15",
       "city": {
         "name": "Singapur",
         "aliases": [
@@ -4544,7 +4544,7 @@
     },
     {
       "number": 63,
-      "date": "2027-01-15",
+      "date": "2027-01-16",
       "city": {
         "name": "Bergen",
         "aliases": [],
@@ -4616,7 +4616,7 @@
     },
     {
       "number": 64,
-      "date": "2027-01-16",
+      "date": "2027-01-17",
       "city": {
         "name": "Marseille",
         "aliases": [
@@ -4690,7 +4690,7 @@
     },
     {
       "number": 65,
-      "date": "2027-01-17",
+      "date": "2027-01-18",
       "city": {
         "name": "Cusco",
         "aliases": [
@@ -4764,7 +4764,7 @@
     },
     {
       "number": 66,
-      "date": "2027-01-18",
+      "date": "2027-01-19",
       "city": {
         "name": "Athen",
         "aliases": [
@@ -4839,7 +4839,7 @@
     },
     {
       "number": 67,
-      "date": "2027-01-19",
+      "date": "2027-01-20",
       "city": {
         "name": "Zürich",
         "aliases": [],
@@ -4911,7 +4911,7 @@
     },
     {
       "number": 68,
-      "date": "2027-01-20",
+      "date": "2027-01-21",
       "city": {
         "name": "Sansibar-Stadt",
         "aliases": [
@@ -4986,7 +4986,7 @@
     },
     {
       "number": 69,
-      "date": "2027-01-21",
+      "date": "2027-01-22",
       "city": {
         "name": "London",
         "aliases": [],
@@ -5058,7 +5058,7 @@
     },
     {
       "number": 70,
-      "date": "2027-01-22",
+      "date": "2027-01-23",
       "city": {
         "name": "Florenz",
         "aliases": [
@@ -5133,7 +5133,7 @@
     },
     {
       "number": 71,
-      "date": "2027-01-23",
+      "date": "2027-01-24",
       "city": {
         "name": "Hongkong",
         "aliases": [
@@ -5207,7 +5207,7 @@
     },
     {
       "number": 72,
-      "date": "2027-01-24",
+      "date": "2027-01-25",
       "city": {
         "name": "Riga",
         "aliases": [],
@@ -5279,7 +5279,7 @@
     },
     {
       "number": 73,
-      "date": "2027-01-25",
+      "date": "2027-01-26",
       "city": {
         "name": "San Francisco",
         "aliases": [],
@@ -5351,7 +5351,7 @@
     },
     {
       "number": 74,
-      "date": "2027-01-26",
+      "date": "2027-01-27",
       "city": {
         "name": "Granada",
         "aliases": [],
@@ -5423,7 +5423,7 @@
     },
     {
       "number": 75,
-      "date": "2027-01-27",
+      "date": "2027-01-28",
       "city": {
         "name": "Jaipur",
         "aliases": [],
@@ -5495,7 +5495,7 @@
     },
     {
       "number": 76,
-      "date": "2027-01-28",
+      "date": "2027-01-29",
       "city": {
         "name": "Helsinki",
         "aliases": [
@@ -5569,7 +5569,7 @@
     },
     {
       "number": 77,
-      "date": "2027-01-29",
+      "date": "2027-01-30",
       "city": {
         "name": "Montevideo",
         "aliases": [],
@@ -5641,7 +5641,7 @@
     },
     {
       "number": 78,
-      "date": "2027-01-30",
+      "date": "2027-01-31",
       "city": {
         "name": "Wellington",
         "aliases": [],
@@ -5713,7 +5713,7 @@
     },
     {
       "number": 79,
-      "date": "2027-01-31",
+      "date": "2027-02-01",
       "city": {
         "name": "Brüssel",
         "aliases": [
@@ -5788,7 +5788,7 @@
     },
     {
       "number": 80,
-      "date": "2027-02-01",
+      "date": "2027-02-02",
       "city": {
         "name": "Dubai",
         "aliases": [],
@@ -5860,7 +5860,7 @@
     },
     {
       "number": 81,
-      "date": "2027-02-02",
+      "date": "2027-02-03",
       "city": {
         "name": "Bratislava",
         "aliases": [
@@ -5934,7 +5934,7 @@
     },
     {
       "number": 82,
-      "date": "2027-02-03",
+      "date": "2027-02-04",
       "city": {
         "name": "Chicago",
         "aliases": [],
@@ -6006,7 +6006,7 @@
     },
     {
       "number": 83,
-      "date": "2027-02-04",
+      "date": "2027-02-05",
       "city": {
         "name": "Luxor",
         "aliases": [],
@@ -6078,7 +6078,7 @@
     },
     {
       "number": 84,
-      "date": "2027-02-05",
+      "date": "2027-02-06",
       "city": {
         "name": "Hamburg",
         "aliases": [],
@@ -6150,7 +6150,7 @@
     },
     {
       "number": 85,
-      "date": "2027-02-06",
+      "date": "2027-02-07",
       "city": {
         "name": "Tiflis",
         "aliases": [
@@ -6224,7 +6224,7 @@
     },
     {
       "number": 86,
-      "date": "2027-02-07",
+      "date": "2027-02-08",
       "city": {
         "name": "Melbourne",
         "aliases": [],
@@ -6296,7 +6296,7 @@
     },
     {
       "number": 87,
-      "date": "2027-02-08",
+      "date": "2027-02-09",
       "city": {
         "name": "Madrid",
         "aliases": [],
@@ -6368,7 +6368,7 @@
     },
     {
       "number": 88,
-      "date": "2027-02-09",
+      "date": "2027-02-10",
       "city": {
         "name": "Hiroshima",
         "aliases": [],
@@ -6440,7 +6440,7 @@
     },
     {
       "number": 89,
-      "date": "2027-02-10",
+      "date": "2027-02-11",
       "city": {
         "name": "Innsbruck",
         "aliases": [],
@@ -6512,7 +6512,7 @@
     },
     {
       "number": 90,
-      "date": "2027-02-11",
+      "date": "2027-02-12",
       "city": {
         "name": "Valparaíso",
         "aliases": [],

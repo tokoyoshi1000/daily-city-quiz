@@ -1,3 +1,5 @@
+export const GAME_URL = "https://tokoyoshi1000.github.io/daily-city-quiz/";
+
 export interface ShareInput {
   number: number;
   solvedAtHint: number | null;
@@ -11,5 +13,5 @@ export function buildShareText(input: ShareInput): string {
     ? "✖️".repeat(input.solvedAtHint! - 1) + "✅"
     : "✖️".repeat(6);
   const act1 = solved ? `${input.solvedAtHint}/6` : "X/6";
-  return `🌍 Daily City Quiz #${input.number}\n🏙️ ${grid} ${act1} · 🧠 ${input.quizCorrect}/3 · 🔥 ${input.streak}`;
+  return `🌍 Daily City Quiz #${input.number}\n🏙️ ${grid} ${act1} · 🧠 ${input.quizCorrect}/3 · 🔥 ${input.streak}\n${GAME_URL}`;
 }
