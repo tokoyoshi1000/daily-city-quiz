@@ -70,7 +70,7 @@ export function ResultScreen({
           <span>Rätsel {formatPuzzleNumber(puzzle.number)}</span>
         </div>
         <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-[#6b6453]">Ziel</p>
-        <p className="font-display text-3xl font-medium uppercase leading-tight tracking-wide">
+        <p className="pr-24 font-display text-3xl font-medium uppercase leading-tight tracking-wide">
           {puzzle.city.name}
         </p>
         <p className="font-mono text-xs text-[#6b6453]">{puzzle.city.country}</p>
@@ -86,8 +86,8 @@ export function ResultScreen({
           </div>
         </div>
         <div
-          className={`stamp-in absolute right-3 top-8 rotate-[-8deg] rounded border-2 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.14em] ${
-            solved ? "border-hit text-hit" : "border-miss text-miss"
+          className={`stamp-in absolute right-3 top-5 rotate-[-8deg] rounded border-2 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.14em] ${
+            solved ? "border-[#1f7a45] text-[#1f7a45]" : "border-[#c0392b] text-[#c0392b]"
           }`}
         >
           {solved ? "Angekommen" : "Verpasst"}

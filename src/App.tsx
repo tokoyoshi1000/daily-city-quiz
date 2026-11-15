@@ -89,6 +89,7 @@ function Game({ puzzle, today }: { puzzle: Puzzle; today: string }) {
       )}
       {state.phase === "quiz" && (
         <QuizScreen
+          key={state.quizIndex}
           puzzle={puzzle}
           state={state}
           onAnswer={(choiceIndex) => send({ type: "ANSWER", choiceIndex })}
