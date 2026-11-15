@@ -16,7 +16,7 @@ export function BoardHeader({
   return (
     <header className="rounded-xl border border-edge bg-board p-4">
       <div className="flex justify-between font-mono text-[11px] uppercase tracking-[0.12em] text-amber">
-        <span>Daily City Quiz</span>
+        <h1>Daily City Quiz</h1>
         <span>{formatBoardDate(puzzle.date)}</span>
       </div>
       <div className="mt-3 flex items-center gap-3">
@@ -30,7 +30,7 @@ export function BoardHeader({
           <span>Serie {streak}</span>
           <button
             type="button"
-            className="tracking-wider text-dim underline-offset-2 hover:underline"
+            className="py-1 tracking-wider text-dim underline-offset-2 hover:underline"
             onClick={onShowStats}
           >
             Statistik

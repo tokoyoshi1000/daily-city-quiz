@@ -12,7 +12,7 @@ function useSpelledText(text: string): string {
   useEffect(() => {
     const isChange = prev.current !== null && prev.current !== target;
     prev.current = target;
-    const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const reduced = window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false;
     if (!isChange || reduced) {
       setDisplay(target);
       return;
@@ -24,10 +24,11 @@ function useSpelledText(text: string): string {
       const locked = Math.min(target.length, Math.floor(t / LOCK_MS));
       let out = target.slice(0, locked);
       for (let i = locked; i < target.length; i++) {
-        out +=
-          target[i] === " "
-            ? " "
-            : CYCLE_CHARS[Math.floor(t / CYCLE_MS + i * 7) % CYCLE_CHARS.length];
+        // Nur Buchstaben cyceln; Leerzeichen, Bindestriche, Klammern usw. stehen fest.
+        // `i * 7` streut die Zufallszeichen, damit nicht alle Zellen synchron laufen.
+        out += /[A-ZÄÖÜ]/.test(target[i])
+          ? CYCLE_CHARS[Math.floor(t / CYCLE_MS + i * 7) % CYCLE_CHARS.length]
+          : target[i];
       }
       setDisplay(out);
       if (locked < target.length) raf = requestAnimationFrame(tick);
@@ -47,7 +48,8 @@ function useSpelledText(text: string): string {
  */
 export function FlapRow({ text, intro = false }: { text: string; intro?: boolean }) {
   const display = useSpelledText(text);
-  const small = text.length > 8;
+  // Aus display statt text abgeleitet: toUpperCase() kann die Länge ändern (ß → SS).
+  const small = display.length > 8;
   return (
     <span aria-hidden className="flex flex-wrap gap-1">
       {Array.from(display).map((ch, i) =>
