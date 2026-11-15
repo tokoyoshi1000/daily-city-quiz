@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import type { GameState, Puzzle, Stats } from "../types";
 import { actOnePoints, quizPoints, totalPoints } from "../game/scoring";
+import { formatBoardDate, formatPuzzleNumber } from "../game/format";
 import { buildShareText } from "../game/share";
 import { effectiveStreak } from "../game/stats";
 
@@ -37,6 +38,7 @@ export function ResultScreen({
     return () => clearInterval(id);
   }, []);
 
+  const solved = state.solvedAtHint !== null;
   const quizCorrect = quizPoints(state.quizAnswers);
   const streak = effectiveStreak(stats, state.puzzleDate);
   const shareText = buildShareText({
@@ -61,29 +63,58 @@ export function ResultScreen({
   }
 
   return (
-    <div className="flex flex-col gap-5 pt-4 text-center">
-      <h2 className="text-2xl font-bold">
-        {totalPoints(state.solvedAtHint, state.quizAnswers)} / 9 Punkte
-      </h2>
-      <div className="flex justify-center gap-6 text-sm text-ink-dim">
-        <span>🏙️ Stadt: {actOnePoints(state.solvedAtHint)} P.</span>
-        <span>🧠 Quiz: {quizCorrect} / 3</span>
-        <span>🔥 Streak: {streak}</span>
+    <div className="flex flex-col gap-4 pt-2">
+      <div className="ticket relative rounded-xl bg-paper px-5 py-4 text-ink">
+        <div className="flex justify-between font-mono text-[10px] uppercase tracking-[0.14em] text-[#6b6453]">
+          <span>Bordkarte</span>
+          <span>Rätsel {formatPuzzleNumber(puzzle.number)}</span>
+        </div>
+        <p className="mt-3 font-mono text-[10px] uppercase tracking-[0.14em] text-[#6b6453]">Ziel</p>
+        <p className="font-display text-3xl font-medium uppercase leading-tight tracking-wide">
+          {puzzle.city.name}
+        </p>
+        <p className="font-mono text-xs text-[#6b6453]">{puzzle.city.country}</p>
+        <div className="mt-3 border-t border-dashed border-ink/30 pt-3">
+          <div className="flex justify-between font-mono text-xs uppercase">
+            <span>{formatBoardDate(puzzle.date)}</span>
+            <span>Punkte {totalPoints(state.solvedAtHint, state.quizAnswers)}/9</span>
+            <span>Serie {streak}</span>
+          </div>
+          <div className="mt-1.5 flex justify-between font-mono text-xs uppercase text-[#6b6453]">
+            <span>Stadt {actOnePoints(state.solvedAtHint)} P.</span>
+            <span>Bonus {quizCorrect}/3</span>
+          </div>
+        </div>
+        <div
+          className={`stamp-in absolute right-3 top-8 rotate-[-8deg] rounded border-2 px-2.5 py-1 font-mono text-[11px] uppercase tracking-[0.14em] ${
+            solved ? "border-hit text-hit" : "border-miss text-miss"
+          }`}
+        >
+          {solved ? "Angekommen" : "Verpasst"}
+        </div>
       </div>
-      <pre className="whitespace-pre-wrap rounded-xl bg-card p-4 text-left text-sm">{shareText}</pre>
+
+      <pre className="whitespace-pre-wrap rounded-lg border border-edge bg-cell p-3 text-left font-mono text-xs leading-relaxed">
+        {shareText}
+      </pre>
+
       <button
         type="button"
-        className="rounded-xl bg-accent py-3.5 text-lg font-bold text-night active:scale-95"
+        className="block w-full rounded-lg bg-amber py-3.5 font-display text-lg font-medium uppercase tracking-wide text-ink active:scale-95"
         onClick={share}
       >
-        {copied ? "Kopiert! ✅" : "Ergebnis teilen 📋"}
+        {copied ? "Kopiert!" : "Teilen"}
       </button>
-      <button type="button" className="text-sm text-ink-dim underline" onClick={onShowStats}>
+      <button
+        type="button"
+        className="mx-auto font-mono text-xs uppercase tracking-wider text-dim underline underline-offset-2"
+        onClick={onShowStats}
+      >
         Meine Statistik
       </button>
-      <p className="text-sm text-ink-dim">
-        Nächstes Rätsel in{" "}
-        <span className="font-mono text-ink">{formatCountdown(msUntilNextMidnight(new Date(now)))}</span>
+      <p className="text-center font-mono text-xs uppercase tracking-wider text-dim">
+        Nächste Abfahrt in{" "}
+        <span className="text-bright">{formatCountdown(msUntilNextMidnight(new Date(now)))}</span>
       </p>
     </div>
   );
