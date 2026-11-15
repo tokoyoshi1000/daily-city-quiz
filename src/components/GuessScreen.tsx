@@ -89,7 +89,11 @@ export function GuessScreen({
       <p className="px-1 text-sm italic leading-relaxed text-dim">„{hostLine}“ — Marco</p>
 
       <div className="fixed inset-x-0 bottom-0 mx-auto w-full max-w-md bg-bg px-4 pb-[calc(1rem+env(safe-area-inset-bottom))] pt-2">
-        {dupNote && <p className="mb-1.5 font-mono text-[11px] text-amber">{dupNote}</p>}
+        {dupNote && (
+          <p role="status" className="mb-1.5 font-mono text-[11px] text-amber">
+            {dupNote}
+          </p>
+        )}
         <div className="ticket relative rounded-xl bg-paper px-5 py-4 text-ink">
           <p className="font-mono text-[10px] uppercase tracking-[0.12em] text-[#6b6453]">
             Dein Tipp

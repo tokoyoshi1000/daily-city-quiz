@@ -39,6 +39,11 @@ body {
   outline-offset: 2px;
 }
 
+/* Auf Papierflächen ist der Amber-Ring fast unsichtbar (~1,5:1) — dort Ink verwenden */
+.ticket :focus-visible {
+  outline-color: var(--color-ink);
+}
+
 /* Fallblatt-Zellen */
 .flap::after {
   content: "";

@@ -42,7 +42,7 @@ export function CityAutocomplete({ cities, onGuess }: { cities: City[]; onGuess:
         }}
       >
         <input
-          className="min-w-0 flex-1 border-0 border-b-2 border-ink/70 bg-transparent px-0.5 py-1.5 text-base text-ink outline-none placeholder:text-[#a39a85] focus:border-ink"
+          className="min-w-0 flex-1 border-0 border-b-2 border-ink/70 bg-transparent px-0.5 py-1.5 text-base text-ink placeholder:text-[#756d5a] focus:border-ink"
           aria-label="Stadt eingeben"
           autoComplete="off"
           autoCapitalize="off"
@@ -63,12 +63,12 @@ export function CityAutocomplete({ cities, onGuess }: { cities: City[]; onGuess:
         </button>
       </form>
       {suggestions.length > 0 && (
-        <ul className="absolute bottom-full z-10 mb-3 max-h-64 w-full overflow-hidden overflow-y-auto rounded-xl border border-edge bg-paper text-ink shadow-lg">
+        <ul className="absolute bottom-full z-10 mb-3 max-h-[min(16rem,40dvh)] w-full overflow-hidden overflow-y-auto rounded-xl border border-edge bg-paper text-ink shadow-lg">
           {suggestions.map((c) => (
             <li key={`${c.name}|${c.country}`}>
               <button
                 type="button"
-                className="w-full px-4 py-2.5 text-left hover:bg-ink/10"
+                className="w-full px-4 py-2.5 text-left hover:bg-ink/10 focus-visible:bg-ink/10 focus-visible:-outline-offset-2"
                 onClick={() => choose(c)}
               >
                 {c.name}
