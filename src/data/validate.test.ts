@@ -1,6 +1,6 @@
 import { describe, expect, it } from "vitest";
-import citiesJson from "./cities.json";
-import puzzlesJson from "./puzzles.json";
+import citiesJson from "../../public/data/cities.json";
+import puzzlesJson from "../../public/data/puzzles.json";
 import type { City, Puzzle } from "../types";
 import { previousDateString } from "../game/dates";
 
