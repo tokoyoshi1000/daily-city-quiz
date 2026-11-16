@@ -4,6 +4,7 @@ import { actOnePoints, quizPoints, totalPoints } from "../game/scoring";
 import { formatBoardDate, formatPuzzleNumber } from "../game/format";
 import { buildShareText } from "../game/share";
 import { effectiveStreak } from "../game/stats";
+import { InstallHint } from "./InstallHint";
 
 function msUntilNextMidnight(now: Date): number {
   const next = new Date(now);
@@ -116,6 +117,7 @@ export function ResultScreen({
         Nächste Abfahrt in{" "}
         <span className="text-bright">{formatCountdown(msUntilNextMidnight(new Date(now)))}</span>
       </p>
+      <InstallHint />
     </div>
   );
 }
