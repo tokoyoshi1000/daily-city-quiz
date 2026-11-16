@@ -131,4 +131,4 @@ async function main(): Promise<void> {
   wireDownload("icon-mask", "icon-mask-dl", "icon-maskable-512.png");
 }
 
-void main();
+main().catch((e) => console.error("Asset-Studio:", e));

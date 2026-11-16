@@ -66,7 +66,7 @@ export function buildShareCardLayout(input: ShareCardInput): ShareCardLayout {
   };
 }
 
-// --- ab hier: Canvas-Rendering (ans Ende von src/game/shareCard.ts) ---
+// --- Canvas-Rendering ---
 
 export const CARD_W = 1080;
 export const CARD_H = 1350;
@@ -79,9 +79,10 @@ export const CARD_H = 1350;
 export async function ensureCardFonts(): Promise<void> {
   const fonts = (globalThis as { document?: Document }).document?.fonts;
   if (!fonts?.load) return;
+  // Beispieltext mit Umlaut, damit auch das passende Unicode-Subset lädt ("RÄTSEL").
   await Promise.all([
-    fonts.load('500 120px "Oswald Variable"'),
-    fonts.load('400 40px "B612 Mono"'),
+    fonts.load('500 120px "Oswald Variable"', "RÄTSEL?0"),
+    fonts.load('400 40px "B612 Mono"', "RÄTSEL?0"),
   ]);
 }
 
@@ -112,7 +113,7 @@ export function drawFlapCell(
 }
 
 /** Gedrehter Grenz-Stempel (wie auf der Bordkarte im Spiel). */
-export function drawStamp(
+function drawStamp(
   ctx: CanvasRenderingContext2D,
   text: string,
   color: string,
