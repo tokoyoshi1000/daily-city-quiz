@@ -30,8 +30,10 @@ export default defineConfig({
         // App-Shell precachen; og.png nur fürs Teilen (offline unnötig).
         // data/*.json ist bewusst NICHT im Precache: ein Daily-Game darf nie
         // ein altes Tagesrätsel aus dem Cache festhalten → NetworkFirst unten.
-        globPatterns: ["**/*.{js,css,html,woff2,woff,png}"],
-        globIgnores: ["og.png"],
+        // Nur woff2 precachen (woff ist der Fallback für Alt-Browser und kommt
+        // dann übers Netz); Nicht-Latin-Subsets braucht das deutsche UI nicht offline.
+        globPatterns: ["**/*.{js,css,html,woff2,png}"],
+        globIgnores: ["og.png", "**/oswald-cyrillic*", "**/oswald-vietnamese*"],
         runtimeCaching: [
           {
             urlPattern: /\/data\/.+\.json$/,
