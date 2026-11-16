@@ -17,6 +17,19 @@ describe("pickShareMethod", () => {
   it("clipboard, wenn es kein share gibt", () => {
     expect(pickShareMethod({}, file)).toBe("clipboard");
   });
+  it("text, wenn canShare wirft statt zu antworten", () => {
+    expect(
+      pickShareMethod(
+        {
+          share: async () => {},
+          canShare: () => {
+            throw new Error("nicht unterstützt");
+          },
+        },
+        file
+      )
+    ).toBe("text");
+  });
 });
 
 describe("isAbortError", () => {

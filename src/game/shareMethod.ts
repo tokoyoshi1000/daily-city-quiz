@@ -14,7 +14,13 @@ export interface ShareCapabilities {
  */
 export function pickShareMethod(nav: ShareCapabilities, probeFile: File): ShareMethod {
   if (typeof nav.share !== "function") return "clipboard";
-  if (typeof nav.canShare === "function" && nav.canShare({ files: [probeFile] })) return "bild";
+  if (typeof nav.canShare === "function") {
+    try {
+      if (nav.canShare({ files: [probeFile] })) return "bild";
+    } catch {
+      // Manche Browser werfen bei canShare, statt false zu liefern — zählt als Nein.
+    }
+  }
   return "text";
 }
 

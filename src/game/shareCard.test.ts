@@ -1,6 +1,6 @@
 // src/game/shareCard.test.ts
 import { describe, expect, it } from "vitest";
-import { buildShareCardLayout } from "./shareCard";
+import { buildShareCardLayout, CARD } from "./shareCard";
 
 describe("buildShareCardLayout", () => {
   it("Treffer bei Hinweis 3 mit 2 Quiz-Punkten", () => {
@@ -14,7 +14,7 @@ describe("buildShareCardLayout", () => {
     expect(l.dateLabel).toBe("MO 16. NOV");
     expect(l.solved).toBe(true);
     expect(l.stampText).toBe("ANGEKOMMEN");
-    expect(l.stampColor).toBe("#1f7a45");
+    expect(l.stampColor).toBe(CARD.hit);
     expect(l.hitStation).toBe(3);
     expect(l.pointsLine).toBe("6 PUNKTE · QUIZ 2/3");
   });
@@ -28,7 +28,7 @@ describe("buildShareCardLayout", () => {
     });
     expect(l.solved).toBe(false);
     expect(l.stampText).toBe("VERPASST");
-    expect(l.stampColor).toBe("#c0392b");
+    expect(l.stampColor).toBe(CARD.miss);
     expect(l.hitStation).toBeNull();
     expect(l.pointsLine).toBe("0 PUNKTE · QUIZ 0/3");
   });
