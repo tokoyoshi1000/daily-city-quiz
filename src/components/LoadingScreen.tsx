@@ -9,7 +9,7 @@ export function LoadingScreen() {
   }, []);
   if (!visible) return null;
   return (
-    <div className="flex flex-col gap-6 pt-14">
+    <div className="flex flex-col gap-6 pt-14" role="status">
       <div className="rounded-xl border border-edge bg-board p-4">
         <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-amber">
           Daily City Quiz

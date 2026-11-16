@@ -32,19 +32,20 @@ export default function App() {
     load();
   }, [load]);
 
+  // Daten gewinnen: eine verspätet eintreffende Fehlerantwort darf bereits
+  // geladene Daten nicht verdecken.
+  if (data) return <Ready data={data} />;
   if (failed)
     return (
       <Shell>
         <ErrorScreen onRetry={load} />
       </Shell>
     );
-  if (!data)
-    return (
-      <Shell>
-        <LoadingScreen />
-      </Shell>
-    );
-  return <Ready data={data} />;
+  return (
+    <Shell>
+      <LoadingScreen />
+    </Shell>
+  );
 }
 
 function Ready({ data }: { data: GameData }) {

@@ -7,7 +7,9 @@ export function ErrorScreen({ onRetry }: { onRetry: () => void }) {
         <h1 className="font-mono text-[11px] uppercase tracking-[0.12em] text-amber">
           Daily City Quiz
         </h1>
-        <p className="mt-3 font-mono text-xs uppercase tracking-wider text-miss">Signalstörung</p>
+        <p className="mt-3 font-mono text-xs uppercase tracking-wider text-miss" role="alert">
+          Signalstörung
+        </p>
       </div>
       <HostBubble>
         Die Anzeigetafel ist gerade nicht erreichbar — vermutlich eine Störung auf der Strecke.

@@ -59,7 +59,7 @@ export function InstallHint() {
       <button
         type="button"
         aria-label="Hinweis ausblenden"
-        className="shrink-0 px-1 font-mono text-sm text-dim"
+        className="min-h-6 min-w-6 shrink-0 px-1 font-mono text-sm text-dim"
         onClick={dismiss}
       >
         ×
