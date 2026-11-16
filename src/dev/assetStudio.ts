@@ -62,7 +62,8 @@ function drawOg(): void {
   for (const ch of text) total += ch === " " ? space : cw + gap;
   total -= gap;
   let x = (W - total) / 2;
-  const y = py + 90;
+  // Vertikal im Panel zentriert: Zellen (80) + Abstand + Unterzeile (26) ≈ 196 hoch.
+  const y = py + 120;
   ctx.textBaseline = "top";
   for (const ch of text) {
     if (ch === " ") {
