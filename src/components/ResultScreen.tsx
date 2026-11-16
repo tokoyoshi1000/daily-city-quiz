@@ -5,6 +5,9 @@ import { formatBoardDate, formatPuzzleNumber } from "../game/format";
 import { buildShareText } from "../game/share";
 import { effectiveStreak } from "../game/stats";
 import { InstallHint } from "./InstallHint";
+import { buildShareCardLayout, renderShareCard } from "../game/shareCard";
+import { isAbortError, pickShareMethod, PNG_PROBE } from "../game/shareMethod";
+import { track } from "../analytics";
 
 function msUntilNextMidnight(now: Date): number {
   const next = new Date(now);
@@ -49,11 +52,12 @@ export function ResultScreen({
     streak: streak,
   });
 
-  async function share() {
+  async function copyToClipboard() {
     try {
       await navigator.clipboard.writeText(shareText);
       setCopied(true);
       setTimeout(() => setCopied(false), 2000);
+      track("geteilt-clipboard");
     } catch {
       try {
         window.prompt("Zum Kopieren markieren:", shareText);
@@ -61,6 +65,43 @@ export function ResultScreen({
         // Umgebung ohne Zwischenablage und prompt(): Der Share-Text steht sichtbar im Screen.
       }
     }
+  }
+
+  async function share() {
+    const probeFile = new File([PNG_PROBE], "probe.png", { type: "image/png" });
+    const method = pickShareMethod(navigator, probeFile);
+
+    if (method === "bild") {
+      try {
+        const layout = buildShareCardLayout({
+          number: puzzle.number,
+          date: puzzle.date,
+          solvedAtHint: state.solvedAtHint,
+          quizAnswers: state.quizAnswers,
+        });
+        const blob = await renderShareCard(layout);
+        const file = new File([blob], `daily-city-quiz-${formatPuzzleNumber(puzzle.number)}.png`, {
+          type: "image/png",
+        });
+        await navigator.share({ files: [file], text: shareText });
+        track("geteilt-bild");
+        return;
+      } catch (e) {
+        if (isAbortError(e)) return; // Nutzer hat den Dialog geschlossen — kein Fallback, kein Tracking
+      }
+    }
+
+    if (method === "bild" || method === "text") {
+      try {
+        await navigator.share!({ text: shareText });
+        track("geteilt-text");
+        return;
+      } catch (e) {
+        if (isAbortError(e)) return;
+      }
+    }
+
+    await copyToClipboard();
   }
 
   return (
