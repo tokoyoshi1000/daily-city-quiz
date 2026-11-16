@@ -73,3 +73,22 @@ export function storageAvailable(): boolean {
     return false;
   }
 }
+
+const INSTALL_HINT_KEY = "dcq:installHint";
+
+/** true, wenn der Install-Hinweis dauerhaft erledigt ist (abgewiesen oder installiert). */
+export function loadInstallHintDone(): boolean {
+  try {
+    return globalThis.localStorage?.getItem(INSTALL_HINT_KEY) === "done";
+  } catch {
+    return false;
+  }
+}
+
+export function saveInstallHintDone(): void {
+  try {
+    globalThis.localStorage?.setItem(INSTALL_HINT_KEY, "done");
+  } catch {
+    // Ohne localStorage erscheint der Hinweis eben erneut — unkritisch.
+  }
+}
