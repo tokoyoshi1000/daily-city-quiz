@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Asset-Studio (nur Dev)</title>
+    <style>
+      body { background: #131519; color: #e8e9eb; font-family: system-ui, sans-serif; padding: 24px; }
+      section { margin-bottom: 40px; }
+      canvas { display: block; border: 1px solid #24282e; margin: 8px 0; }
+      a { color: #ffc83d; }
+      .row { display: flex; gap: 24px; align-items: flex-end; flex-wrap: wrap; }
+    </style>
+  </head>
+  <body>
+    <h1>Asset-Studio</h1>
+    <p>Nur über den Dev-Server erreichbar — wird nicht gebaut und nicht deployt.</p>
+    <section>
+      <h2>OG-Bild 1200×630</h2>
+      <canvas id="og"></canvas>
+      <a id="og-dl">og.png herunterladen</a>
+    </section>
+    <section>
+      <h2>Icons</h2>
+      <div class="row">
+        <div><canvas id="icon-32"></canvas><a id="icon-32-dl">favicon.png</a></div>
+        <div><canvas id="icon-180"></canvas><a id="icon-180-dl">apple-touch-icon.png</a></div>
+        <div><canvas id="icon-192"></canvas><a id="icon-192-dl">icon-192.png</a></div>
+        <div><canvas id="icon-512"></canvas><a id="icon-512-dl">icon-512.png</a></div>
+        <div><canvas id="icon-mask"></canvas><a id="icon-mask-dl">icon-maskable-512.png</a></div>
+      </div>
+    </section>
+    <section>
+      <h2>Share-Card (Sieg / Niederlage)</h2>
+      <div class="row">
+        <canvas id="card-win"></canvas>
+        <canvas id="card-lose"></canvas>
+      </div>
+    </section>
+    <script type="module" src="/src/dev/assetStudio.ts"></script>
+  </body>
+</html>
